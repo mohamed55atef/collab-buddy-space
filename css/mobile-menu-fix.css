@@ -1,0 +1,71 @@
+/**
+ * ملف CSS لإصلاح قائمة الهاتف المحمول
+ * يحتوي على أنماط إضافية لتحسين تفاعل القائمة على الهاتف المحمول
+ */
+
+/* تحسين زر القائمة */
+.menu-toggle {
+    cursor: pointer;
+    padding: 10px;
+    z-index: 102;
+    position: relative;
+}
+
+.menu-toggle i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:active i {
+    transform: scale(0.9);
+}
+
+/* تحسين روابط القائمة */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:active {
+    transform: scale(0.98);
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 30%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/* تحسين الطبقة المتراكبة */
+.overlay {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* إزالة التأثير الافتراضي للنقر على الروابط في الأجهزة المحمولة */
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* تحسين تجربة المستخدم على الأجهزة التي تعمل باللمس */
+@media (hover: none) and (pointer: coarse) {
+    .nav-item {
+        padding: 8px 0;
+    }
+    
+    .nav-link {
+        padding: 12px 0;
+    }
+    
+    .menu-toggle {
+        padding: 15px;
+    }
+}

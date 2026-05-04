@@ -1,0 +1,193 @@
+.week-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-md);
+}
+
+.day-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+}
+
+.day-header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: var(--spacing-sm);
+    text-align: center;
+}
+
+.day-meals {
+    padding: var(--spacing-sm);
+}
+
+.meal-item {
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.meal-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.meal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.meal-name {
+    font-size: var(--font-size-medium);
+    margin: 0;
+}
+
+.meal-calories {
+    font-size: var(--font-size-small);
+    color: var(--primary-color);
+}
+
+.meal-foods {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.food-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-small);
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-secondary-color);
+}
+
+.food-name {
+    flex: 2;
+}
+
+.food-quantity, .food-calories {
+    flex: 1;
+    text-align: left;
+}
+
+.meal-plan-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+/* قوالب خطط الوجبات */
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.template-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-medium);
+    padding: var(--spacing-lg);
+    transition: var(--transition-medium);
+}
+
+.template-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.template-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.template-title {
+    margin: 0;
+    font-size: var(--font-size-large);
+}
+
+.template-calories {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.template-description {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary-color);
+}
+
+.template-features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+}
+
+.feature i {
+    color: var(--primary-color);
+    margin-left: var(--spacing-xs);
+}
+
+.template-actions {
+    text-align: center;
+}
+
+/* تجاوب مع الأجهزة المختلفة */
+@media (max-width: 992px) {
+    .templates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .days-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .checkbox-group {
+        flex-direction: column;
+    }
+    
+    .meal-plan-info {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .templates-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 576px) {
+    .days-grid {
+        grid-template-columns: 1fr;
+    }
+}

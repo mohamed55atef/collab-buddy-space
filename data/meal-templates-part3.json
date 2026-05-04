@@ -1,0 +1,85 @@
+      ]
+    },
+    {
+      "id": "weight-gain",
+      "name": "خطة لزيادة الوزن",
+      "description": "خطة غذائية عالية السعرات الحرارية لزيادة الوزن وبناء العضلات.",
+      "calories": 3000,
+      "meals_count": 6,
+      "features": [
+        "6 وجبات يومية",
+        "غنية بالبروتين",
+        "عالية الكربوهيدرات"
+      ],
+      "days": [
+        {
+          "day": "الأحد",
+          "meals": [
+            {
+              "name": "الإفطار",
+              "calories": 700,
+              "items": [
+                {
+                  "name": "بيض مقلي",
+                  "quantity": 3,
+                  "calories": 232.5,
+                  "protein": 19.5,
+                  "carbs": 1.65,
+                  "fat": 16.5
+                },
+                {
+                  "name": "خبز أسمر",
+                  "quantity": 2,
+                  "calories": 160,
+                  "protein": 8,
+                  "carbs": 30,
+                  "fat": 2
+                },
+                {
+                  "name": "أفوكادو",
+                  "quantity": 1,
+                  "calories": 240,
+                  "protein": 3,
+                  "carbs": 12,
+                  "fat": 22
+                },
+                {
+                  "name": "حليب كامل الدسم",
+                  "quantity": 1,
+                  "calories": 150,
+                  "protein": 8,
+                  "carbs": 12,
+                  "fat": 8
+                }
+              ]
+            },
+            {
+              "name": "وجبة خفيفة 1",
+              "calories": 400,
+              "items": [
+                {
+                  "name": "زبادي كامل الدسم",
+                  "quantity": 1,
+                  "calories": 150,
+                  "protein": 8,
+                  "carbs": 12,
+                  "fat": 8
+                },
+                {
+                  "name": "موز",
+                  "quantity": 1,
+                  "calories": 89,
+                  "protein": 1.1,
+                  "carbs": 22.8,
+                  "fat": 0.3
+                },
+                {
+                  "name": "مكسرات",
+                  "quantity": 30,
+                  "calories": 180,
+                  "protein": 6,
+                  "carbs": 6,
+                  "fat": 15
+                }
+              ]
+            }

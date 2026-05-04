@@ -1,0 +1,87 @@
+/* مجموعة الاختيارات */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xs);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-left: var(--spacing-xs);
+}
+
+.form-hint {
+    display: block;
+    color: var(--text-secondary-color);
+    font-size: var(--font-size-small);
+    margin-top: var(--spacing-xs);
+}
+
+.form-hint a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* أزرار النموذج */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+/* رسائل الخطأ */
+.error-message {
+    background-color: var(--error-color);
+    color: white;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-small);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* عرض خطة الوجبات */
+.no-plan-message {
+    text-align: center;
+    padding: var(--spacing-xxl) 0;
+    color: var(--text-secondary-color);
+}
+
+.no-plan-message i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.meal-plan-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.meal-plan-title {
+    margin-bottom: var(--spacing-md);
+}
+
+.meal-plan-info {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    color: var(--text-secondary-color);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+}
+
+.info-item i {
+    color: var(--primary-color);
+    margin-left: var(--spacing-xs);
+}

@@ -1,0 +1,560 @@
+/**
+ * قاعدة بيانات الأكلات المصرية - الجزء الأول
+ */
+
+// تصدير مصفوفة الأكلات المصرية
+const egyptianFood1 = [
+    {
+        id: "egy-001",
+        name: "كشري مصري",
+        calories: 320,
+        protein: 10,
+        carbs: 60,
+        fat: 6,
+        serving: "طبق صغير (250 جرام)",
+        category: "egyptian",
+        description: "طبق شعبي مصري يجمع بين الأرز، العدس، المكرونة، والصلصة — رمز من رموز المطبخ المصري."
+    },
+    {
+        id: "egy-002",
+        name: "فول مدمس (بالزيت والليمون)",
+        calories: 220,
+        protein: 12,
+        carbs: 25,
+        fat: 8,
+        serving: "طبق متوسط (200 جرام)",
+        category: "egyptian",
+        description: "إفطار مصري تقليدي — يُقدم مع زيت زيتون، ليمون، كمون، وخبز بلدي."
+    },
+    {
+        id: "egy-003",
+        name: "طعمية (فلافل)",
+        calories: 180,
+        protein: 7,
+        carbs: 20,
+        fat: 8,
+        serving: "قطعتين متوسطين",
+        category: "egyptian",
+        description: "مقبلات مصرية من الفول المطحون والتوابل — تُقلى أو تُخبز بصيغة صحية."
+    },
+    {
+        id: "egy-004",
+        name: "ملوخية خضراء (بالدجاج)",
+        calories: 180,
+        protein: 15,
+        carbs: 12,
+        fat: 7,
+        serving: "طبق (250 جرام)",
+        category: "egyptian",
+        description: "طبق مصري شتوي شهير — يُطبخ بأوراق الملوخية مع مرقة الدجاج والثوم المقلي."
+    },
+    {
+        id: "egy-005",
+        name: "بامية باللحم",
+        calories: 210,
+        protein: 16,
+        carbs: 15,
+        fat: 10,
+        serving: "طبق (250 جرام)",
+        category: "egyptian",
+        description: "بامية طازجة مطهية مع قطع لحم وصلصة طماطم — طبق دافئ ومغذي."
+    },
+    {
+        id: "egy-006",
+        name: "محشي ورق عنب",
+        calories: 160,
+        protein: 4,
+        carbs: 30,
+        fat: 4,
+        serving: "10 قطع متوسطة",
+        category: "egyptian",
+        description: "ورق عنب محشي بالأرز والخضار — يُطبخ بالزيت أو بدونه للنسخة الصحية."
+    },
+    {
+        id: "egy-007",
+        name: "محشي كوسة",
+        calories: 150,
+        protein: 5,
+        carbs: 25,
+        fat: 4,
+        serving: "قطعتين متوسطين",
+        category: "egyptian",
+        description: "كوسة محشية بالأرز واللحم أو الخضار — تُطبخ بالصلصة أو بالفرن."
+    },
+    {
+        id: "egy-008",
+        name: "فتة باللحمة",
+        calories: 400,
+        protein: 20,
+        carbs: 45,
+        fat: 15,
+        serving: "طبق صغير (250 جرام)",
+        category: "egyptian",
+        description: "طبق احتفالي مصري — يجمع بين الخبز المحمص، الأرز، اللحم، والثومية."
+    },
+    {
+        id: "egy-009",
+        name: "فتة بالدجاج",
+        calories: 350,
+        protein: 22,
+        carbs: 40,
+        fat: 10,
+        serving: "طبق صغير (250 جرام)",
+        category: "egyptian",
+        description: "نسخة أخف من الفتة باستخدام صدر الدجاج المشوي بدل اللحم."
+    },
+    {
+        id: "egy-010",
+        name: "فتة حمص",
+        calories: 300,
+        protein: 10,
+        carbs: 45,
+        fat: 8,
+        serving: "طبق (250 جرام)",
+        category: "egyptian",
+        description: "طبق نباتي شعبي — يُقدم في رمضان، مصنوع من الحمص، الخبز، والثومية."
+    },
+    {
+        id: "egy-011",
+        name: "أرز مع شعيرية",
+        calories: 200,
+        protein: 4,
+        carbs: 42,
+        fat: 3,
+        serving: "كوب واحد (150 جرام)",
+        category: "egyptian",
+        description: "طبق يومي في البيوت المصرية — أرز مصري مع شعيرية محمصة خفيفة."
+    },
+    {
+        id: "egy-012",
+        name: "عدس بجبة",
+        calories: 180,
+        protein: 10,
+        carbs: 25,
+        fat: 5,
+        serving: "كوب (200 جرام)",
+        category: "egyptian",
+        description: "عدس مصري مع شعرية محمصة — يُقدم مع الليمون والبصل — غني بالبروتين النباتي."
+    },
+    {
+        id: "egy-013",
+        name: "شوربة عدس",
+        calories: 120,
+        protein: 6,
+        carbs: 20,
+        fat: 2,
+        serving: "كوب (250 مل)",
+        category: "egyptian",
+        description: "شوربة دافئة من العدس الأصفر — تُتبل بالكمون والليمون."
+    },
+    {
+        id: "egy-014",
+        name: "شوربة خضار",
+        calories: 80,
+        protein: 3,
+        carbs: 15,
+        fat: 1,
+        serving: "كوب (250 مل)",
+        category: "egyptian",
+        description: "شوربة خفيفة من الجزر، البطاطس، الكوسة، والكرفس — أساس في المطبخ المصري."
+    },
+    {
+        id: "egy-015",
+        name: "شوربة لسان عصفور",
+        calories: 150,
+        protein: 5,
+        carbs: 25,
+        fat: 4,
+        serving: "كوب (250 مل)",
+        category: "egyptian",
+        description: "شوربة دافئة من معكرونة لسان العصفور مع مرقة دجاج أو خضار."
+    },
+    {
+        id: "egy-016",
+        name: "مكرونة بشاميل",
+        calories: 350,
+        protein: 14,
+        carbs: 40,
+        fat: 14,
+        serving: "قطعة متوسطة (200 جرام)",
+        category: "egyptian",
+        description: "طبق مصري محبوب — مكرونة مع صلصة بشاميل وغالباً لحم مفروم."
+    },
+    {
+        id: "egy-017",
+        name: "مكرونة بالصلصة (إسباجيتي)",
+        calories: 250,
+        protein: 8,
+        carbs: 45,
+        fat: 5,
+        serving: "طبق (200 جرام)",
+        category: "egyptian",
+        description: "مكرونة مع صلصة طماطم منزلية — تُضاف لها قطع لحم أو تُقدم نباتية."
+    },
+    {
+        id: "egy-018",
+        name: "رز بسمتي بالخضار",
+        calories: 220,
+        protein: 5,
+        carbs: 45,
+        fat: 4,
+        serving: "كوب (150 جرام)",
+        category: "egyptian",
+        description: "أرز بسمتي مع جزر، بازلاء، وفاصوليا — طبق نباتي خفيف."
+    },
+    {
+        id: "egy-019",
+        name: "رز مع مكسرات وزبيب",
+        calories: 280,
+        protein: 5,
+        carbs: 45,
+        fat: 8,
+        serving: "كوب (150 جرام)",
+        category: "egyptian",
+        description: "أرز مصري مع لوز، صنوبر، وزبيب — يُقدم في المناسبات."
+    },
+    {
+        id: "egy-020",
+        name: "فريك باللحم",
+        calories: 250,
+        protein: 15,
+        carbs: 30,
+        fat: 8,
+        serving: "كوب (200 جرام)",
+        category: "egyptian",
+        description: "طبق شعبي من القمح الأخضر المكسّر مع قطع لحم صغيرة — يُطبخ بالسمن أو الزيت."
+    },
+    {
+        id: "egy-021",
+        name: "بليلة",
+        calories: 180,
+        protein: 5,
+        carbs: 38,
+        fat: 2,
+        serving: "كوب صغير (150 جرام)",
+        category: "egyptian",
+        description: "حلوى مصرية من القمح المسلوق بالحليب — تُحلى بالسكر أو العسل."
+    },
+    {
+        id: "egy-022",
+        name: "أرز باللبن",
+        calories: 200,
+        protein: 6,
+        carbs: 35,
+        fat: 5,
+        serving: "كوب صغير (150 جرام)",
+        category: "egyptian",
+        description: "حلوى مصرية تقليدية — أرز مطهو بالحليب والسكر، تُزين بالقرفة."
+    },
+    {
+        id: "egy-023",
+        name: "كنافة نابلسية",
+        calories: 450,
+        protein: 8,
+        carbs: 60,
+        fat: 20,
+        serving: "قطعة صغيرة (100 جرام)",
+        category: "egyptian",
+        description: "حلوى شرقية شهيرة — خيوط عجين مع جبنة أو قشطة، تُسقى بالقطر."
+    },
+    {
+        id: "egy-024",
+        name: "أم علي",
+        calories: 380,
+        protein: 7,
+        carbs: 55,
+        fat: 15,
+        serving: "طبق صغير (150 جرام)",
+        category: "egyptian",
+        description: "حلوى مصرية دافئة — من العجين، الحليب، المكسرات، والزبيب."
+    },
+    {
+        id: "egy-025",
+        name: "بقلاوة",
+        calories: 420,
+        protein: 5,
+        carbs: 50,
+        fat: 22,
+        serving: "قطعة (80 جرام)",
+        category: "egyptian",
+        description: "طبقات من العجين المحشو بالمكسرات — تُسقى بالقطر أو العسل."
+    },
+    {
+        id: "egy-026",
+        name: "فطير مشلتت",
+        calories: 300,
+        protein: 7,
+        carbs: 35,
+        fat: 14,
+        serving: "قطعة متوسطة (100 جرام)",
+        category: "egyptian",
+        description: "فطير مصري متعدد الطبقات — يُقدم حلو أو مالح مع العسل أو الجبنة."
+    },
+    {
+        id: "egy-027",
+        name: "عيش بلدي مع جبنة",
+        calories: 250,
+        protein: 12,
+        carbs: 30,
+        fat: 8,
+        serving: "قطعة خبز + شريحتين جبنة",
+        category: "egyptian",
+        description: "إفطار مصري كلاسيكي — خبز بلدي مع جبنة رومي أو قريش."
+    },
+    {
+        id: "egy-028",
+        name: "عيش بلدي مع عسل أسود",
+        calories: 220,
+        protein: 5,
+        carbs: 45,
+        fat: 2,
+        serving: "قطعة خبز + ملعقة عسل أسود",
+        category: "egyptian",
+        description: "إفطار شعبي — يُقدم مع طحينة أو زبدة لزيادة السعرات."
+    },
+    {
+        id: "egy-029",
+        name: "ساندويتش تونة بالمايونيز",
+        calories: 320,
+        protein: 15,
+        carbs: 25,
+        fat: 16,
+        serving: "ساندويتش واحد",
+        category: "egyptian",
+        description: "وجبة سريعة شائعة — تونة مع مايونيز وخس في عيش فينو أو سن."
+    },
+    {
+        id: "egy-030",
+        name: "ساندويتش جبنة رومي وطماطم",
+        calories: 280,
+        protein: 12,
+        carbs: 30,
+        fat: 12,
+        serving: "ساندويتش واحد",
+        category: "egyptian",
+        description: "ساندويتش بسيط وسريع — يُستخدم في العشاء أو كوجبة خفيفة."
+    },
+    {
+        id: "egy-031",
+        name: "كبدة بلدي بالبصل",
+        calories: 250,
+        protein: 22,
+        carbs: 8,
+        fat: 14,
+        serving: "طبق صغير (150 جرام)",
+        category: "egyptian",
+        description: "كبدة بقري أو دجاج مع بصل مقلي — تُقدم مع عيش بلدي وخل وفلفل."
+    },
+    {
+        id: "egy-032",
+        name: "سجق بلدي",
+        calories: 300,
+        protein: 14,
+        carbs: 5,
+        fat: 24,
+        serving: "قطعتين متوسطين",
+        category: "egyptian",
+        description: "نقانق مصرية حارة — تُقلى مع طماطم وبصل — تُقدم مع العيش والفول."
+    },
+    {
+        id: "egy-033",
+        name: "موزة لحم",
+        calories: 280,
+        protein: 26,
+        carbs: 5,
+        fat: 16,
+        serving: "قطعة (150 جرام)",
+        category: "egyptian",
+        description: "جزء من لحم العجل — يُطبخ ببطء حتى يصبح طري — يُقدم مع أرز أو خضار."
+    },
+    {
+        id: "egy-034",
+        name: "حمام محشي",
+        calories: 350,
+        protein: 28,
+        carbs: 20,
+        fat: 18,
+        serving: "نصف حمامة",
+        category: "egyptian",
+        description: "طبق فاخر — حمام محشي بالأرز واللحم — يُقدم في المناسبات."
+    },
+    {
+        id: "egy-035",
+        name: "وراك فراخ مشوية",
+        calories: 240,
+        protein: 26,
+        carbs: 0,
+        fat: 14,
+        serving: "قطعة كبيرة (150 جرام)",
+        category: "egyptian",
+        description: "وراك دجاج مشوي بالفرن — يُتبل بالبهارات — طبق عائلي شائع."
+    },
+    {
+        id: "egy-036",
+        name: "صدر فراخ مشوي",
+        calories: 180,
+        protein: 32,
+        carbs: 0,
+        fat: 5,
+        serving: "قطعة (150 جرام)",
+        category: "egyptian",
+        description: "صدر دجاج مشوي — بروتين نقي — يُقدم مع أرز أو سلطة."
+    },
+    {
+        id: "egy-037",
+        name: "رنجة",
+        calories: 280,
+        protein: 20,
+        carbs: 2,
+        fat: 20,
+        serving: "قطعة متوسطة",
+        category: "egyptian",
+        description: "سمك مملح ومدخن — يُقدم في الإفطار مع طماطم، بصل، وليمون."
+    },
+    {
+        id: "egy-038",
+        name: "سمك بلطي مشوي",
+        calories: 180,
+        protein: 25,
+        carbs: 2,
+        fat: 7,
+        serving: "فيليه (150 جرام)",
+        category: "egyptian",
+        description: "سمك بلطي مصري مشوي — يُقدم مع طحينة أو سلطة خضراء."
+    },
+    {
+        id: "egy-039",
+        name: "جمبري مقلي",
+        calories: 220,
+        protein: 18,
+        carbs: 15,
+        fat: 10,
+        serving: "طبق صغير (150 جرام)",
+        category: "egyptian",
+        description: "جمبري مقلي بالبقسماط أو بدون — يُقدم مع طحينة أو مايونيز."
+    },
+    {
+        id: "egy-040",
+        name: "كفتة لحم",
+        calories: 220,
+        protein: 18,
+        carbs: 5,
+        fat: 14,
+        serving: "3 قطع متوسطة",
+        category: "egyptian",
+        description: "لحم مفروم مع بصل وبهارات — تُشوى أو تُقلى — تُقدم مع أرز وخضار."
+    },
+    {
+        id: "egy-041",
+        name: "شاورما فراخ",
+        calories: 250,
+        protein: 22,
+        carbs: 15,
+        fat: 12,
+        serving: "ساندويتش صغير",
+        category: "egyptian",
+        description: "صدر دجاج متبل ومقطع رفيع — يُشوى ويُقدم في خبز مع ثومية وخضار."
+    },
+    {
+        id: "egy-042",
+        name: "شاورما لحم",
+        calories: 300,
+        protein: 20,
+        carbs: 15,
+        fat: 20,
+        serving: "ساندويتش صغير",
+        category: "egyptian",
+        description: "لحم ضأن أو بقري متبل — يُشوى ويُقدم مع ثومية وبقدونس."
+    },
+    {
+        id: "egy-043",
+        name: "لحمة برجر",
+        calories: 280,
+        protein: 20,
+        carbs: 25,
+        fat: 12,
+        serving: "ساندويتش مع خبز",
+        category: "egyptian",
+        description: "برجر لحم مفروم — يُشوى أو يُقلى — يُقدم مع خس وطماطم ومايونيز."
+    },
+    {
+        id: "egy-044",
+        name: "سجق بالطماطم",
+        calories: 260,
+        protein: 12,
+        carbs: 10,
+        fat: 20,
+        serving: "طبق صغير",
+        category: "egyptian",
+        description: "سجق بلدي مع صلصة طماطم وبصل — يُقدم مع عيش بلدي."
+    },
+    {
+        id: "egy-045",
+        name: "بيض بالبسطرمة",
+        calories: 250,
+        protein: 16,
+        carbs: 5,
+        fat: 18,
+        serving: "طبق صغير",
+        category: "egyptian",
+        description: "بيض مقلي مع شرائح بسطرمة — إفطار دسم وسريع."
+    },
+    {
+        id: "egy-046",
+        name: "فول بالزيت والطماطم",
+        calories: 240,
+        protein: 12,
+        carbs: 25,
+        fat: 10,
+        serving: "طبق متوسط",
+        category: "egyptian",
+        description: "فول مدمس مع طماطم وبصل وزيت زيتون — نسخة غنية من الفول التقليدي."
+    },
+    {
+        id: "egy-047",
+        name: "كشري بالصلصة الحارة",
+        calories: 350,
+        protein: 10,
+        carbs: 65,
+        fat: 7,
+        serving: "طبق كبير",
+        category: "egyptian",
+        description: "نسخة مطاعم شهيرة — يُضاف لها صلصة ثوم حارة وخل — لمحبي الطعم القوي."
+    },
+    {
+        id: "egy-048",
+        name: "أرز صيادية بالسمك",
+        calories: 300,
+        protein: 20,
+        carbs: 40,
+        fat: 8,
+        serving: "طبق (250 جرام)",
+        category: "egyptian",
+        description: "أرز مع سمك مملح أو بلطي — يُتبل بالبصل والتوابل — طبق ساحلي شهير."
+    },
+    {
+        id: "egy-049",
+        name: "ورق عنب باللحم",
+        calories: 200,
+        protein: 8,
+        carbs: 25,
+        fat: 8,
+        serving: "10 قطع",
+        category: "egyptian",
+        description: "نسخة دسمة من ورق العنب — محشي بالأرز واللحم المفروم — يُطبخ بالزيت."
+    },
+    {
+        id: "egy-050",
+        name: "خضار سوتيه مع لحم",
+        calories: 220,
+        protein: 15,
+        carbs: 15,
+        fat: 10,
+        serving: "طبق (250 جرام)",
+        category: "egyptian",
+        description: "خضار مقطع (كوسة، فاصوليا، جزر) مع قطع لحم صغيرة — يُطهى بزيت زيتون."
+    }
+];
+
+// تصدير البيانات
+window.egyptianFood1 = egyptianFood1;

@@ -1,0 +1,566 @@
+/**
+ * أنماط خاصة بصفحة من نحن
+ */
+
+/* قسم البطل */
+.page-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.page-title {
+    font-size: var(--font-size-xxxlarge);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+    animation: fadeIn 1s ease-in;
+    
+}
+
+.page-subtitle {
+    font-size: var(--font-size-xlarge);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: slideUp 1s ease-in;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    padding: var(--spacing-xxl) 0;
+}
+
+/* قسم من نحن */
+.about-section {
+    margin-bottom: var(--spacing-xxl);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    box-shadow: var(--shadow-large);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.about-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    z-index: 1;
+}
+
+.about-text {
+    padding: var(--spacing-lg);
+}
+
+.section-title {
+    font-size: var(--font-size-xxlarge);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 60%;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.about-description {
+    color: var(--text-secondary-color);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+}
+
+.about-description p {
+    margin-bottom: var(--spacing-md);
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.stat-item {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-medium);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-large);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-title {
+    font-size: var(--font-size-small);
+    color: var(--text-secondary-color);
+}
+
+/* قسم رؤيتنا ورسالتنا */
+.vision-mission {
+    margin-bottom: var(--spacing-xxl);
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-large);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-large);
+}
+
+.vision-mission-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+.vision-card, .mission-card {
+    padding: var(--spacing-lg);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-medium);
+    transition: var(--transition-medium);
+}
+
+.vision-card:hover, .mission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.card-title {
+    font-size: var(--font-size-xlarge);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.card-title i {
+    font-size: 2rem;
+}
+
+.card-content {
+    color: var(--text-secondary-color);
+    line-height: 1.8;
+}
+
+.card-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+/* قسم فريقنا */
+.team-section {
+    margin-bottom: var(--spacing-xxl);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.team-member {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-medium);
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-large);
+}
+
+.member-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.1);
+}
+
+.member-info {
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.member-name {
+    font-size: var(--font-size-large);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.member-position {
+    font-size: var(--font-size-small);
+    color: var(--text-secondary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.member-bio {
+    color: var(--text-secondary-color);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    color: var(--text-secondary-color);
+    transition: var(--transition-fast);
+}
+
+.social-link:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+/* قسم الشهادات */
+.testimonials {
+    margin-bottom: var(--spacing-xxl);
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover fixed;
+    padding: var(--spacing-xxl) 0;
+    color: var(--text-color);
+}
+
+.testimonials-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.testimonials-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: var(--border-radius-medium);
+    padding: var(--spacing-xl);
+    text-align: center;
+    display: none;
+}
+
+.testimonial-item.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.testimonial-content {
+    font-size: var(--font-size-large);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    color: #00ff2d;
+}
+
+.testimonial-content::before, .testimonial-content::after {
+    content: '"';
+    font-size: 3rem;
+    color: var(--primary-color);
+    position: absolute;
+    opacity: 0.5;
+}
+
+.testimonial-content::before {
+    top: -20px;
+    left: -10px;
+}
+
+.testimonial-content::after {
+    bottom: -40px;
+    right: -10px;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.author-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: var(--spacing-sm);
+    border: 3px solid var(--primary-color);
+}
+
+.author-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-name {
+    font-size: var(--font-size-medium);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.author-title {
+    font-size: var(--font-size-small);
+    color: var(--text-secondary-color);
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.slider-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 50%;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.slider-btn:hover {
+    background-color: var(--primary-color);
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.slider-dot.active {
+    background-color: var(--primary-color);
+}
+
+/* قسم اتصل بنا */
+.contact-section {
+    margin-bottom: var(--spacing-xxl);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+.contact-info {
+    padding: var(--spacing-lg);
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 204, 0, 0.1);
+    border-radius: 50%;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.contact-text {
+    flex: 1;
+}
+
+.contact-label {
+    font-size: var(--font-size-medium);
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-value {
+    color: var(--text-secondary-color);
+    line-height: 1.6;
+}
+
+.contact-form {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-medium);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-medium);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: var(--font-size-medium);
+    transition: var(--transition-fast);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-medium);
+}
+
+/* تصميم متجاوب */
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .about-image {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .vision-mission-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .testimonial-content {
+        font-size: var(--font-size-medium);
+    }
+}
+
+@media (max-width: 576px) {
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* الرسوم المتحركة */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

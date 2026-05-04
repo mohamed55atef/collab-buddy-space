@@ -1,0 +1,141 @@
+/**
+ * أنماط خاصة بصفحة جدول التمارين - الجزء الخامس
+ * يحتوي على أنماط الرسوم المتحركة والتجاوب
+ */
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Hover Effects */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.goal-card:hover .goal-icon {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .schedule-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .schedule-info {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .day-header {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: flex-start;
+    }
+    
+    .exercise-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .exercise-sets-reps {
+        margin: var(--spacing-sm) 0;
+    }
+    
+    .exercise-actions {
+        align-self: flex-end;
+    }
+    
+    .search-filter-container {
+        flex-direction: column;
+    }
+    
+    .filter-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filter-group label {
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .modal-exercise-item {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .modal-exercise-item .btn {
+        width: 100%;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header, .footer, .page-hero, .workout-goals, .workout-settings, 
+    .schedule-actions, .exercise-actions, .loading-overlay {
+        display: none !important;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .workout-schedule {
+        display: block !important;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .schedule-header {
+        background-color: transparent;
+        border: 1px solid #ddd;
+    }
+    
+    .workout-day {
+        background-color: transparent;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+    }
+    
+    .exercise-item {
+        background-color: transparent;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .info-value {
+        color: black;
+    }
+}

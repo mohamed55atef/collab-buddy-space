@@ -1,0 +1,313 @@
+.exercise-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-small);
+    transition: var(--transition-fast);
+}
+
+.exercise-item:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.exercise-info {
+    flex: 1;
+}
+
+.exercise-name {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-medium);
+}
+
+.exercise-details {
+    display: flex;
+    gap: var(--spacing-md);
+    color: var(--text-secondary-color);
+    font-size: var(--font-size-small);
+}
+
+.exercise-sets-reps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 var(--spacing-md);
+}
+
+.sets, .reps {
+    font-size: var(--font-size-small);
+    color: var(--text-secondary-color);
+}
+
+.exercise-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    transition: var(--transition-fast);
+}
+
+.btn-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-color: var(--primary-color);
+}
+
+.add-exercise-btn {
+    width: 100%;
+    margin-top: var(--spacing-sm);
+}
+
+/* نافذة اختيار التمارين */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-medium);
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius-medium);
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: scaleIn 0.3s ease-in;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-title {
+    font-size: var(--font-size-large);
+    color: var(--primary-color);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: var(--font-size-large);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.modal-close:hover {
+    color: var(--primary-color);
+}
+
+.modal-body {
+    padding: var(--spacing-lg);
+    overflow-y: auto;
+    max-height: calc(80vh - 130px);
+}
+
+.search-filter-container {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.search-box {
+    flex: 1;
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.search-box input {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.filter-box {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.filter-group label {
+    white-space: nowrap;
+}
+
+.filter-group select {
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.exercise-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.modal-exercise-item {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-small);
+    padding: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition-fast);
+}
+
+.modal-exercise-item:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-footer {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    text-align: left;
+}
+
+/* مؤشر التحميل */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+}
+
+.loading-spinner i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* تصميم متجاوب */
+@media (max-width: 992px) {
+    .goals-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .settings-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .plan-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .plan-info {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .search-filter-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .goals-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .workout-days {
+        grid-template-columns: 1fr;
+    }
+    
+    .exercise-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .exercise-sets-reps {
+        margin: var(--spacing-sm) 0;
+    }
+    
+    .exercise-actions {
+        align-self: flex-end;
+    }
+}

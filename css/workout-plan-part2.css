@@ -1,0 +1,133 @@
+/* إعدادات الجدول */
+.workout-settings {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-medium);
+}
+
+.settings-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group:last-child {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: var(--font-size-medium);
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-left: var(--spacing-sm);
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+/* جدول التمارين */
+.workout-plan {
+    display: none;
+    margin-top: var(--spacing-xl);
+    animation: fadeIn 0.5s ease-in;
+}
+
+.workout-plan.active {
+    display: block;
+}
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.plan-info {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.info-label {
+    font-weight: 600;
+    color: var(--text-secondary-color);
+}
+
+.info-value {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.plan-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.workout-days {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.workout-day {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-medium);
+    padding: var(--spacing-lg);
+    transition: var(--transition-medium);
+}
+
+.workout-day:hover {
+    box-shadow: var(--shadow-medium);
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.day-title {
+    font-size: var(--font-size-large);
+    color: var(--primary-color);
+}
+
+.exercises-list {
+    margin-bottom: var(--spacing-md);
+}

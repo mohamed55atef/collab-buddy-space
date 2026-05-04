@@ -1,0 +1,560 @@
+/**
+ * قاعدة بيانات الفواكه
+ */
+
+// تصدير مصفوفة الفواكه
+const fruits1 = [
+    {
+        id: "fruit-001",
+        name: "تفاح (نيء — أحمر)",
+        calories: 52,
+        protein: 0.3,
+        carbs: 14,
+        fat: 0.2,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة يومية في مصر، غنية بالألياف ومضادات الأكسدة — مثالية بين الوجبات."
+    },
+    {
+        id: "fruit-002",
+        name: "موز (ناضج)",
+        calories: 89,
+        protein: 1.1,
+        carbs: 23,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "مصدر سريع للطاقة، يُؤكل كوجبة خفيفة أو مع الشوفان — غني بالبوتاسيوم."
+    },
+    {
+        id: "fruit-003",
+        name: "برتقال (نيء — بدون قشر)",
+        calories: 47,
+        protein: 0.9,
+        carbs: 12,
+        fat: 0.1,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "غني بفيتامين C، يُشرب عصيره أو يُؤكل كوجبة — شائع جداً في الشتاء المصري."
+    },
+    {
+        id: "fruit-004",
+        name: "يوسفي (مندي — بدون قشر)",
+        calories: 53,
+        protein: 0.8,
+        carbs: 13,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة شتوية مصرية محبوبة، سهلة التقشير وحلوة الطعم."
+    },
+    {
+        id: "fruit-005",
+        name: "جوافة (بيضاء — بدون بذور)",
+        calories: 68,
+        protein: 2.6,
+        carbs: 14,
+        fat: 1,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "أعلى فاكهة في فيتامين C، تُؤكل نيئة أو تُصنع منها العصائر."
+    },
+    {
+        id: "fruit-006",
+        name: "فراولة (نيئة)",
+        calories: 32,
+        protein: 0.7,
+        carbs: 7.7,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة منعشة، غنية بمضادات الأكسدة — تُستخدم في الحلويات أو العصائر."
+    },
+    {
+        id: "fruit-007",
+        name: "مانجو (ناضجة)",
+        calories: 60,
+        protein: 0.8,
+        carbs: 15,
+        fat: 0.4,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة صيفية مصرية ملكية، غنية بالفيتامينات A وC."
+    },
+    {
+        id: "fruit-008",
+        name: "أناناس (نيء)",
+        calories: 50,
+        protein: 0.5,
+        carbs: 13,
+        fat: 0.1,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "يحتوي على إنزيم البروميلين المفيد للهضم — يُستخدم في العصائر والحلويات."
+    },
+    {
+        id: "fruit-009",
+        name: "عنب (أحمر — بدون بذر)",
+        calories: 69,
+        protein: 0.7,
+        carbs: 18,
+        fat: 0.2,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة صيفية شائعة، تُؤكل طازجة أو تُصنع منها المربى والعصير."
+    },
+    {
+        id: "fruit-010",
+        name: "تين (طازج)",
+        calories: 74,
+        protein: 0.8,
+        carbs: 19,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة موسمية غنية بالألياف والكالسيوم — تُباع في الأسواق الشعبية."
+    },
+    {
+        id: "fruit-011",
+        name: "بلح (رطب — طازج)",
+        calories: 142,
+        protein: 1.8,
+        carbs: 37,
+        fat: 0.2,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة رمضانية أساسية، مصدر طبيعي للسكر والطاقة."
+    },
+    {
+        id: "fruit-012",
+        name: "رمان (حبوب فقط)",
+        calories: 83,
+        protein: 1.7,
+        carbs: 19,
+        fat: 1.2,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "غني بمضادات الأكسدة، يُشرب عصيره أو يُضاف للسلطات."
+    },
+    {
+        id: "fruit-013",
+        name: "ليمون (نيء — عصير)",
+        calories: 29,
+        protein: 1.1,
+        carbs: 9,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "يُستخدم في التتبيلات والمشروبات — مفيد للمناعة والهضم."
+    },
+    {
+        id: "fruit-014",
+        name: "ليمون هندي (تمر هندي — بدون بذور)",
+        calories: 239,
+        protein: 2.8,
+        carbs: 62,
+        fat: 0.6,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "يُستخدم في العصائر والمشروبات الباردة — ملين طبيعي."
+    },
+    {
+        id: "fruit-015",
+        name: "مشمش (طازج)",
+        calories: 48,
+        protein: 1.4,
+        carbs: 11,
+        fat: 0.4,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة صيفية ذهبية، غنية بفيتامين A — تُؤكل طازجة أو مجففة."
+    },
+    {
+        id: "fruit-016",
+        name: "خوخ (طازج — أصفر)",
+        calories: 39,
+        protein: 0.9,
+        carbs: 10,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة صيفية عطرية، غنية بالماء والألياف — منعشة جداً."
+    },
+    {
+        id: "fruit-017",
+        name: "كمثرى (نيئة)",
+        calories: 57,
+        protein: 0.4,
+        carbs: 15,
+        fat: 0.1,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة مهدئة للجهاز الهضمي، تُؤكل كوجبة خفيفة أو في السلطات."
+    },
+    {
+        id: "fruit-018",
+        name: "بطيخ (لُب فقط)",
+        calories: 30,
+        protein: 0.6,
+        carbs: 8,
+        fat: 0.2,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة صيفية مصرية أساسية، مرطبة جداً ومنخفضة السعرات."
+    },
+    {
+        id: "fruit-019",
+        name: "شمام (لُب فقط)",
+        calories: 34,
+        protein: 0.8,
+        carbs: 8.5,
+        fat: 0.2,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "يُؤكل بارداً في الصيف — غني بالبوتاسيوم وفيتامين A."
+    },
+    {
+        id: "fruit-020",
+        name: "قشطة (لُب فقط)",
+        calories: 101,
+        protein: 1.7,
+        carbs: 25,
+        fat: 0.6,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة استوائية كريمية الطعم — غنية بالألياف والمغنيسيوم."
+    },
+    {
+        id: "fruit-021",
+        name: "كيوي (نيء — بدون قشر)",
+        calories: 61,
+        protein: 1.1,
+        carbs: 15,
+        fat: 0.5,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "أعلى من البرتقال في فيتامين C — يُؤكل مقطعاً أو مع الزبادي."
+    },
+    {
+        id: "fruit-022",
+        name: "بابايا (لُب فقط)",
+        calories: 43,
+        protein: 0.5,
+        carbs: 11,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "تحتوي على إنزيم الباباين المفيد للهضم — تُستخدم في العصائر."
+    },
+    {
+        id: "fruit-023",
+        name: "توت (أسود — نيء)",
+        calories: 43,
+        protein: 1.4,
+        carbs: 10,
+        fat: 0.5,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "غني بمضادات الأكسدة — يُستخدم في العصائر أو مع الزبادي."
+    },
+    {
+        id: "fruit-024",
+        name: "توت (أحمر — نيء)",
+        calories: 46,
+        protein: 1.2,
+        carbs: 12,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة حمضية خفيفة — ممتازة لصحة القلب والمناعة."
+    },
+    {
+        id: "fruit-025",
+        name: "توت (أزرق — نيء)",
+        calories: 57,
+        protein: 0.7,
+        carbs: 14,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "يُسمى 'سوبر فود' — يحسن الذاكرة ويحمي من الشيخوخة."
+    },
+    {
+        id: "fruit-026",
+        name: "دراق (نيء)",
+        calories: 39,
+        protein: 0.9,
+        carbs: 10,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة صيفية عطرية — غنية بالماء والألياف."
+    },
+    {
+        id: "fruit-027",
+        name: "تفاح أخضر (نيء)",
+        calories: 52,
+        protein: 0.3,
+        carbs: 14,
+        fat: 0.2,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "أكثر حمضية من الأحمر — مفيد للكبد وحرق الدهون."
+    },
+    {
+        id: "fruit-028",
+        name: "تين شوكي (لُب فقط — بدون بذور)",
+        calories: 41,
+        protein: 0.7,
+        carbs: 10,
+        fat: 0.5,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة صحراوية مصرية — غنية بالماء والألياف."
+    },
+    {
+        id: "fruit-029",
+        name: "تمر (مجفف — بدون نوى)",
+        calories: 282,
+        protein: 2.5,
+        carbs: 75,
+        fat: 0.4,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "فاكهة رمضانية أساسية — مصدر طبيعي للطاقة والسكريات المعقدة."
+    },
+    {
+        id: "fruit-030",
+        name: "زبيب (مجفف — بدون بذور)",
+        calories: 299,
+        protein: 3.1,
+        carbs: 79,
+        fat: 0.5,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "يُستخدم في الحلويات أو كوجبة سريعة — غني بالحديد والبوتاسيوم."
+    },
+    {
+        id: "fruit-031",
+        name: "مشمش مجفف",
+        calories: 241,
+        protein: 3.4,
+        carbs: 63,
+        fat: 0.5,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "مصدر ممتاز لفيتامين A والحديد — يُؤكل كوجبة أو مع الشوفان."
+    },
+    {
+        id: "fruit-032",
+        name: "قراصيا (برقوق مجفف)",
+        calories: 240,
+        protein: 2.2,
+        carbs: 64,
+        fat: 0.4,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "ملين طبيعي — غني بالألياف والبوتاسيوم."
+    },
+    {
+        id: "fruit-033",
+        name: "أناناس معلب (بدون سكر مضاف)",
+        calories: 50,
+        protein: 0.5,
+        carbs: 13,
+        fat: 0.1,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "يُستخدم في الحلويات أو كوجبة — اختر النوع المحفوظ في عصيره الطبيعي."
+    },
+    {
+        id: "fruit-034",
+        name: "مانجو معلبة (بدون سكر)",
+        calories: 60,
+        protein: 0.8,
+        carbs: 15,
+        fat: 0.4,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "بديل عملي في غير موسمها — تأكد من خلوها من السكر المضاف."
+    },
+    {
+        id: "fruit-035",
+        name: "جوافة معلبة (بدون سكر)",
+        calories: 68,
+        protein: 2.6,
+        carbs: 14,
+        fat: 1,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "تحافظ على قيمتها الغذائية — مثالية لفصل الشتاء."
+    },
+    {
+        id: "fruit-036",
+        name: "فراولة مجمدة (بدون سكر)",
+        calories: 32,
+        protein: 0.7,
+        carbs: 7.7,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "تُستخدم في العصائر أو الحلويات — تحتفظ بفيتاميناتها عند التجميد."
+    },
+    {
+        id: "fruit-037",
+        name: "مانجو مجمدة (بدون سكر)",
+        calories: 60,
+        protein: 0.8,
+        carbs: 15,
+        fat: 0.4,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "مثالية لعمل السموذي — تحافظ على الطعم والقيمة الغذائية."
+    },
+    {
+        id: "fruit-038",
+        name: "موز مجفف (بدون سكر مضاف)",
+        calories: 362,
+        protein: 3.9,
+        carbs: 92,
+        fat: 1.8,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "وجبة طاقة مركزة — تُستخدم في المخبوزات أو مع المكسرات."
+    },
+    {
+        id: "fruit-039",
+        name: "تفاح مجفف (بدون سكر)",
+        calories: 209,
+        protein: 0.3,
+        carbs: 57,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "يُستخدم في الحلويات أو كوجبة — غني بالألياف."
+    },
+    {
+        id: "fruit-040",
+        name: "برتقال مجمد (لب فقط)",
+        calories: 47,
+        protein: 0.9,
+        carbs: 12,
+        fat: 0.1,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "يُستخدم في العصائر أو السموذي — يحافظ على فيتامين C."
+    },
+    {
+        id: "fruit-041",
+        name: "كيوي مجمد",
+        calories: 61,
+        protein: 1.1,
+        carbs: 15,
+        fat: 0.5,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "مثالي للسموذي — يحتفظ بقيمته الغذائية عند التجميد."
+    },
+    {
+        id: "fruit-042",
+        name: "بابايا مجمدة",
+        calories: 43,
+        protein: 0.5,
+        carbs: 11,
+        fat: 0.3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "تُستخدم في العصائر — غنية بالإنزيمات المفيدة للهضم."
+    },
+    {
+        id: "fruit-043",
+        name: "قشطة مجمدة",
+        calories: 101,
+        protein: 1.7,
+        carbs: 25,
+        fat: 0.6,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "تُستخدم في الحلويات أو العصائر — كريمية الطعم وغنية بالألياف."
+    },
+    {
+        id: "fruit-044",
+        name: "توت مجمد (مشكل)",
+        calories: 52,
+        protein: 1.1,
+        carbs: 13,
+        fat: 0.4,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "خليط من الأحمر والأزرق والأسود — مضاد أكسدة قوي."
+    },
+    {
+        id: "fruit-045",
+        name: "عنب أسود (نيء)",
+        calories: 69,
+        protein: 0.7,
+        carbs: 18,
+        fat: 0.2,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "غني بمضادات الأكسدة — يُستخدم في العصائر أو يؤكل طازجاً."
+    },
+    {
+        id: "fruit-046",
+        name: "عنب أخضر (نيء)",
+        calories: 69,
+        protein: 0.7,
+        carbs: 18,
+        fat: 0.2,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "حلو الطعم ومنعش — يُستخدم في السلطات أو كوجبة خفيفة."
+    },
+    {
+        id: "fruit-047",
+        name: "رمان مجفف (بذور فقط)",
+        calories: 309,
+        protein: 7,
+        carbs: 78,
+        fat: 3,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "يُستخدم في السلطات أو الحلويات — مركز مضادات أكسدة."
+    },
+    {
+        id: "fruit-048",
+        name: "تمر سكري (طبيعي — بدون تحلية)",
+        calories: 300,
+        protein: 2.5,
+        carbs: 78,
+        fat: 0.4,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "أحلى أنواع التمر — يُستخدم في الحلويات أو كوجبة طاقة."
+    },
+    {
+        id: "fruit-049",
+        name: "بلح شيشي (طازج)",
+        calories: 142,
+        protein: 1.8,
+        carbs: 37,
+        fat: 0.2,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "نوع مصري شهير من البلح الطازج — طري وحلو جداً."
+    },
+    {
+        id: "fruit-050",
+        name: "تمر هندي مركز (معجون بدون سكر)",
+        calories: 239,
+        protein: 2.8,
+        carbs: 62,
+        fat: 0.6,
+        serving: "100 جرام",
+        category: "fruits",
+        description: "يُستخدم في المشروبات أو الصلصات — ملين طبيعي ومنعش."
+    }
+];
+
+// تصدير البيانات
+window.fruits1 = fruits1;

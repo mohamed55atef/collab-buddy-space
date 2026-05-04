@@ -1,0 +1,134 @@
+/**
+ * أنماط خاصة بصفحة جدول التمارين - الجزء الرابع
+ * يحتوي على أنماط الرسائل والتحميل
+ */
+
+/* رسائل التأكيد والخطأ */
+.confirm-message,
+.error-message {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    z-index: 1000;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+.confirm-message {
+    background-color: #2ecc71;
+}
+
+.error-message {
+    background-color: #e74c3c;
+}
+
+/* Loading Spinner */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    display: none;
+}
+
+.loading-overlay.active {
+    display: flex;
+}
+
+.spinner {
+    font-size: 3rem;
+    color: var(--primary-color);
+    animation: spin 1s linear infinite;
+}
+
+/* No Exercises Message */
+.no-exercises {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-small);
+}
+
+/* Exercise Details */
+.exercise-details-modal .modal-body {
+    color: #ffffff;
+}
+
+.exercise-details-header {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.exercise-details-name {
+    font-size: var(--font-size-xlarge);
+    margin-bottom: var(--spacing-sm);
+}
+
+.exercise-details-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.exercise-details-meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.exercise-details-meta-item i {
+    color: var(--primary-color);
+}
+
+.exercise-details-description {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.exercise-details-instructions {
+    margin-bottom: var(--spacing-md);
+}
+
+.exercise-details-instructions h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.exercise-details-instructions ol {
+    padding-right: var(--spacing-md);
+}
+
+.exercise-details-instructions li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.exercise-details-tips {
+    background-color: rgba(255, 204, 0, 0.1);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-small);
+    margin-bottom: var(--spacing-md);
+}
+
+.exercise-details-tips h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.exercise-details-tips ul {
+    padding-right: var(--spacing-md);
+}
+
+.exercise-details-tips li {
+    margin-bottom: var(--spacing-sm);
+}

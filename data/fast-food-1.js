@@ -1,0 +1,560 @@
+/**
+ * قاعدة بيانات الوجبات السريعة - الجزء الأول
+ */
+
+// تصدير مصفوفة الوجبات السريعة
+const fastFood1 = [
+    {
+        id: "ff-001",
+        name: "ساندويتش برجر لحم (كلاسيك)",
+        calories: 450,
+        protein: 22,
+        carbs: 40,
+        fat: 22,
+        serving: "ساندويتش واحد",
+        category: "fastfood",
+        description: "خبز برجر، لحم بقري مفروم، خس، طماطم، مايونيز، وصوص خاص."
+    },
+    {
+        id: "ff-002",
+        name: "ساندويتش برجر دجاج",
+        calories: 420,
+        protein: 25,
+        carbs: 45,
+        fat: 16,
+        serving: "ساندويتش واحد",
+        category: "fastfood",
+        description: "صدر دجاج مشوي أو مقلي، خبز، خس، طماطم، ومايونيز."
+    },
+    {
+        id: "ff-003",
+        name: "ساندويتش شاورما فراخ",
+        calories: 500,
+        protein: 28,
+        carbs: 50,
+        fat: 20,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "دجاج شاورما، ثومية، بطاطس، مخلل، وخضار في خبز صاج أو فينو."
+    },
+    {
+        id: "ff-004",
+        name: "ساندويتش شاورما لحم",
+        calories: 580,
+        protein: 30,
+        carbs: 50,
+        fat: 28,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "لحم ضأن أو بقري مشوي على السيخ، مع ثومية وخضار."
+    },
+    {
+        id: "ff-005",
+        name: "ساندويتش سجق بلدي",
+        calories: 480,
+        protein: 18,
+        carbs: 45,
+        fat: 26,
+        serving: "ساندويتش مع خبز وطماطم وبصل",
+        category: "fastfood",
+        description: "سجق مصري حار مقلي مع طماطم وبصل — يُقدم مع عيش فينو أو بلدي."
+    },
+    {
+        id: "ff-006",
+        name: "ساندويتش كبدة",
+        calories: 420,
+        protein: 25,
+        carbs: 40,
+        fat: 18,
+        serving: "ساندويتش مع خبز وبصل وخل",
+        category: "fastfood",
+        description: "كبدة بقري أو دجاج مع بصل مقلي وتوابل — طبق شعبي سريع."
+    },
+    {
+        id: "ff-007",
+        name: "ساندويتش تونة مع مايونيز",
+        calories: 380,
+        protein: 16,
+        carbs: 35,
+        fat: 18,
+        serving: "ساندويتش واحد",
+        category: "fastfood",
+        description: "تونة مصفاة مع مايونيز وخس وطماطم — وجبة مكتبية سريعة."
+    },
+    {
+        id: "ff-008",
+        name: "ساندويتش جبنة وكشطة",
+        calories: 450,
+        protein: 15,
+        carbs: 40,
+        fat: 25,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "جبنة رومي أو شيدر مع كشطة وزبدة — وجبة إفطار دسمة."
+    },
+    {
+        id: "ff-009",
+        name: "ساندويتش بسطرمة",
+        calories: 400,
+        protein: 20,
+        carbs: 35,
+        fat: 20,
+        serving: "ساندويتش مع خبز وطماطم",
+        category: "fastfood",
+        description: "بسطرمة مدخنة مع طماطم وخس — تُقدم ساخنة أو باردة."
+    },
+    {
+        id: "ff-010",
+        name: "ساندويتش فول وطعمية",
+        calories: 500,
+        protein: 18,
+        carbs: 65,
+        fat: 16,
+        serving: "ساندويتش كبير مع طحينة وفلفل",
+        category: "fastfood",
+        description: "فول مدمس مع 3 قطع طعمية — وجبة مصرية شعبية كاملة."
+    },
+    {
+        id: "ff-011",
+        name: "بيتزا صغيرة (مارغريتا)",
+        calories: 600,
+        protein: 20,
+        carbs: 70,
+        fat: 22,
+        serving: "بيتزا 8 قطع (25 سم)",
+        category: "fastfood",
+        description: "عجينة، صلصة طماطم، وجبن موزاريلا — أساسي في قائمة البيتزا."
+    },
+    {
+        id: "ff-012",
+        name: "بيتزا بيبروني",
+        calories: 750,
+        protein: 28,
+        carbs: 80,
+        fat: 30,
+        serving: "بيتزا 8 قطع (25 سم)",
+        category: "fastfood",
+        description: "مارغريتا مع شرائح سلامي حارة — الأكثر مبيعاً عالمياً."
+    },
+    {
+        id: "ff-013",
+        name: "بيتزا خضار",
+        calories: 550,
+        protein: 18,
+        carbs: 75,
+        fat: 18,
+        serving: "بيتزا 8 قطع (25 سم)",
+        category: "fastfood",
+        description: "فلفل، زيتون، فطر، وبصل — نسخة نباتية خفيفة نسبياً."
+    },
+    {
+        id: "ff-014",
+        name: "بيتزا 4 جبن",
+        calories: 800,
+        protein: 30,
+        carbs: 70,
+        fat: 38,
+        serving: "بيتزا 8 قطع (25 سم)",
+        category: "fastfood",
+        description: "موزاريلا، شيدر، بارميزان، وجبن ماعز — وجبة دسمة جداً."
+    },
+    {
+        id: "ff-015",
+        name: "علبة ناجتس دجاج (6 قطع)",
+        calories: 320,
+        protein: 18,
+        carbs: 20,
+        fat: 18,
+        serving: "علبة صغيرة",
+        category: "fastfood",
+        description: "قطع دجاج مقلية مع بقسماط — تُقدم مع صوص برتقال أو خل."
+    },
+    {
+        id: "ff-016",
+        name: "ستربس دجاج (5 قطع)",
+        calories: 350,
+        protein: 25,
+        carbs: 15,
+        fat: 20,
+        serving: "علبة صغيرة",
+        category: "fastfood",
+        description: "شرائح دجاج مقلية — مقرمشة من الخارج وطرية من الداخل."
+    },
+    {
+        id: "ff-017",
+        name: "علبة بطاطس صغيرة",
+        calories: 230,
+        protein: 3,
+        carbs: 30,
+        fat: 12,
+        serving: "علبة (100 جرام)",
+        category: "fastfood",
+        description: "بطاطس مقلية مقرمشة — أساس أي وجبة سريعة."
+    },
+    {
+        id: "ff-018",
+        name: "علبة بطاطس كبيرة",
+        calories: 450,
+        protein: 5,
+        carbs: 60,
+        fat: 22,
+        serving: "علبة (200 جرام)",
+        category: "fastfood",
+        description: " portion كبيرة من البطاطس المقلية — تكفي لشخصين."
+    },
+    {
+        id: "ff-019",
+        name: "حلقات بصل مقلي",
+        calories: 380,
+        protein: 6,
+        carbs: 45,
+        fat: 18,
+        serving: "علبة متوسطة",
+        category: "fastfood",
+        description: "حلقات بصل مغطاة ببقسماط ومقلية — مقرمشة وحلوة المذاق."
+    },
+    {
+        id: "ff-020",
+        name: "دجاج مقلي (قطعة داكن)",
+        calories: 280,
+        protein: 20,
+        carbs: 10,
+        fat: 18,
+        serving: "قطعة واحدة (فخذ أو ورك)",
+        category: "fastfood",
+        description: "دجاج مغطى بتوابل ومقلي — طري من الداخل ومقرمش من الخارج."
+    },
+    {
+        id: "ff-021",
+        name: "دجاج مقلي (قطعة فاتح)",
+        calories: 220,
+        protein: 25,
+        carbs: 8,
+        fat: 12,
+        serving: "قطعة واحدة (صدر أو جناح)",
+        category: "fastfood",
+        description: "صدر أو جناح دجاج مقلي — أقل دهوناً من القطع الداكنة."
+    },
+    {
+        id: "ff-022",
+        name: "علبة دجاج مقلي (4 قطع)",
+        calories: 800,
+        protein: 60,
+        carbs: 40,
+        fat: 45,
+        serving: "بوكس وجبة",
+        category: "fastfood",
+        description: "مزيج من الصدور، الأجنحة، والفخذين — وجبة عائلية."
+    },
+    {
+        id: "ff-023",
+        name: "سوبريم دجاج مقلي",
+        calories: 550,
+        protein: 35,
+        carbs: 40,
+        fat: 28,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "فيليه دجاج مقلي مع خس وطماطم ومايونيز في خبز كبير."
+    },
+    {
+        id: "ff-024",
+        name: "ساندويتش زيجر",
+        calories: 520,
+        protein: 28,
+        carbs: 45,
+        fat: 26,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "فيليه دجاج متبل ومقلي، مع صوص زيجر الحار والخضار."
+    },
+    {
+        id: "ff-025",
+        name: "ساندويتش تشيكن ماك",
+        calories: 480,
+        protein: 26,
+        carbs: 42,
+        fat: 22,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "فيليه دجاج مع مايونيز خاص وخس — وجبة شهيرة في مصر."
+    },
+    {
+        id: "ff-026",
+        name: "ساندويتش فيلادلفيا",
+        calories: 580,
+        protein: 24,
+        carbs: 50,
+        fat: 30,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "فيليه دجاج مع جبنة كريمية، بصل كراميل، وصوص خاص."
+    },
+    {
+        id: "ff-027",
+        name: "ساندويتش تاكو دجاج",
+        calories: 400,
+        protein: 22,
+        carbs: 45,
+        fat: 16,
+        serving: "2 تاكو",
+        category: "fastfood",
+        description: "خبز تاكو مع دجاج متبل، خس، طماطم، وجبن — بنكهة مكسيكية."
+    },
+    {
+        id: "ff-028",
+        name: "ساندويتش تاكو لحم",
+        calories: 480,
+        protein: 26,
+        carbs: 45,
+        fat: 22,
+        serving: "2 تاكو",
+        category: "fastfood",
+        description: "لحم مفروم متبل مع جبن شيدر وبصل — وجبة سريعة بنكهة مكسيكية."
+    },
+    {
+        id: "ff-029",
+        name: "ساندويتش هوت دوج",
+        calories: 350,
+        protein: 12,
+        carbs: 35,
+        fat: 18,
+        serving: "ساندويتش واحد",
+        category: "fastfood",
+        description: "خبز هوت دوج مع نقانق، كاتشب، خردل، وبصل — كلاسيكي عالمي."
+    },
+    {
+        id: "ff-030",
+        name: "ساندويتش كورن دوج",
+        calories: 320,
+        protein: 10,
+        carbs: 30,
+        fat: 16,
+        serving: "قطعة واحدة",
+        category: "fastfood",
+        description: "نقانق مغطاة بعجينة الذرة ومقلية — وجبة مقرمشة محبوبة."
+    },
+    {
+        id: "ff-031",
+        name: "ساندويتش فلافل (طعمية)",
+        calories: 400,
+        protein: 12,
+        carbs: 50,
+        fat: 16,
+        serving: "3 قطع مع خبز وطحينة",
+        category: "fastfood",
+        description: "طعمية نباتية مع طحينة وخس وفلفل — وجبة مصرية سريعة."
+    },
+    {
+        id: "ff-032",
+        name: "ساندويتش فلافل أمريكي (فلافل برجر)",
+        calories: 450,
+        protein: 15,
+        carbs: 55,
+        fat: 18,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "قطعتين فلافل مع خس وطماطم ومايونيز نباتي — بديل نباتي للبرجر."
+    },
+    {
+        id: "ff-033",
+        name: "ساندويتش فول سندوتشي",
+        calories: 380,
+        protein: 14,
+        carbs: 55,
+        fat: 12,
+        serving: "ساندويتش مع خبز وزيت وليمون",
+        category: "fastfood",
+        description: "فول مدمس مهروس مع طماطم وبصل — وجبة مصرية سريعة ومشبعة."
+    },
+    {
+        id: "ff-034",
+        name: "ساندويتش كشري",
+        calories: 600,
+        protein: 16,
+        carbs: 90,
+        fat: 15,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "نسخة محمولة من الكشري — في خبز بدلاً من الطبق — شائعة في مصر."
+    },
+    {
+        id: "ff-035",
+        name: "ساندويتش ميكس جبنة",
+        calories: 550,
+        protein: 20,
+        carbs: 45,
+        fat: 30,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "مزيج من الجبن الأبيض، الرومي، والشيدر مع زبدة — وجبة دسمة."
+    },
+    {
+        id: "ff-036",
+        name: "ساندويتش فاهيتا دجاج",
+        calories: 480,
+        protein: 28,
+        carbs: 50,
+        fat: 18,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "شرائح دجاج مع فلفل وبصل متبل — بنكهة مكسيكية حارة."
+    },
+    {
+        id: "ff-037",
+        name: "ساندويتش فاهيتا لحم",
+        calories: 550,
+        protein: 30,
+        carbs: 50,
+        fat: 24,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "شرائح لحم مع فلفل وبصل — تُقدم مع صوص جبنة أو ثومية."
+    },
+    {
+        id: "ff-038",
+        name: "ساندويتش رانش دجاج",
+        calories: 520,
+        protein: 26,
+        carbs: 45,
+        fat: 24,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "فيليه دجاج مع صوص رانش وخس وبصل أحمر — بنكهة أمريكية."
+    },
+    {
+        id: "ff-039",
+        name: "ساندويتش باربكيو دجاج",
+        calories: 500,
+        protein: 25,
+        carbs: 55,
+        fat: 18,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "فيليه دجاج مع صوص باربكيو حلو وحار — بنكهة أمريكية جنوبية."
+    },
+    {
+        id: "ff-040",
+        name: "ساندويتش تشيكن ترياكي",
+        calories: 470,
+        protein: 24,
+        carbs: 50,
+        fat: 16,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "فيليه دجاج مع صوص ترياكي حلو ومالح — بنكهة يابانية."
+    },
+    {
+        id: "ff-041",
+        name: "ساندويتش جمبري",
+        calories: 520,
+        protein: 22,
+        carbs: 55,
+        fat: 20,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "جمبري مقلي مع مايونيز وخس — وجبة بحرية سريعة."
+    },
+    {
+        id: "ff-042",
+        name: "ساندويتش سمك مقلي",
+        calories: 480,
+        protein: 20,
+        carbs: 50,
+        fat: 20,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "فيليه سمك مقلي مع طحينة أو مايونيز — وجبة شعبية في المدن الساحلية."
+    },
+    {
+        id: "ff-043",
+        name: "ساندويتش كبدة إسكندراني",
+        calories: 450,
+        protein: 25,
+        carbs: 40,
+        fat: 20,
+        serving: "ساندويتش مع فلفل أخضر وخل",
+        category: "fastfood",
+        description: "كبدة مع فلفل أخضر حار وخل — نسخة إسكندرانية حارة."
+    },
+    {
+        id: "ff-044",
+        name: "ساندويتش لانشون",
+        calories: 420,
+        protein: 15,
+        carbs: 40,
+        fat: 20,
+        serving: "ساندويتش مع جبنة ومايونيز",
+        category: "fastfood",
+        description: "لانشون دجاج أو لحم مع جبنة — وجبة سريعة للأطفال والكبار."
+    },
+    {
+        id: "ff-045",
+        name: "ساندويتش تونا مشوية",
+        calories: 380,
+        protein: 20,
+        carbs: 40,
+        fat: 14,
+        serving: "ساندويتش مع خضار وليمون",
+        category: "fastfood",
+        description: "تونة مشوية مع خضار وليمون — نسخة أخف من التونة بالمايونيز."
+    },
+    {
+        id: "ff-046",
+        name: "ساندويتش أفوكادو وبيض",
+        calories: 450,
+        protein: 18,
+        carbs: 40,
+        fat: 24,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "أفوكادو مهروس مع بيض مقلي — وجبة عصرية وغنية بالدهون الصحية."
+    },
+    {
+        id: "ff-047",
+        name: "ساندويتش خضار مشوي",
+        calories: 350,
+        protein: 10,
+        carbs: 50,
+        fat: 12,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "باذنجان، كوسة، فلفل — مشوية مع جبنة وصوص — نباتي وصحي نسبياً."
+    },
+    {
+        id: "ff-048",
+        name: "ساندويتش حمص وفلافل",
+        calories: 500,
+        protein: 16,
+        carbs: 65,
+        fat: 18,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "مزيج من الحمص والفلافل مع طحينة وخضار — وجبة نباتية متكاملة."
+    },
+    {
+        id: "ff-049",
+        name: "ساندويتش فول وبيض",
+        calories: 480,
+        protein: 22,
+        carbs: 55,
+        fat: 16,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "فول مدمس مع بيضة مقلي أو مسلوقة — وجبة مصرية مشبعة."
+    },
+    {
+        id: "ff-050",
+        name: "ساندويتش بطاطس وجبنة",
+        calories: 550,
+        protein: 15,
+        carbs: 60,
+        fat: 25,
+        serving: "ساندويتش كبير",
+        category: "fastfood",
+        description: "بطاطس مقلية مع جبنة موزاريلا أو شيدر — وجبة سريعة مقرمشة ودافئة."
+    }
+];
+
+// تصدير البيانات
+window.fastFood1 = fastFood1;

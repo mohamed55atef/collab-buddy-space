@@ -1,0 +1,560 @@
+/**
+ * قاعدة بيانات الحلويات - الجزء الأول
+ */
+
+// تصدير مصفوفة الحلويات
+const desserts1 = [
+    {
+        id: "dessert-001",
+        name: "كنافة نابلسية بالقشطة",
+        calories: 480,
+        protein: 8,
+        carbs: 65,
+        fat: 22,
+        serving: "قطعة متوسطة (100 جرام)",
+        category: "desserts",
+        description: "خيوط كنافة مع قشطة طازجة، تُسقى بالقطر — أشهر حلوى شرقية في مصر."
+    },
+    {
+        id: "dessert-002",
+        name: "أم علي",
+        calories: 420,
+        protein: 7,
+        carbs: 60,
+        fat: 16,
+        serving: "طبق صغير (150 جرام)",
+        category: "desserts",
+        description: "حلوى مصرية دافئة — من العجين، الحليب، المكسرات، والزبيب — تُقدم ساخنة."
+    },
+    {
+        id: "dessert-003",
+        name: "بقلاوة (بقلاوة جزر)",
+        calories: 450,
+        protein: 5,
+        carbs: 55,
+        fat: 24,
+        serving: "قطعة (80 جرام)",
+        category: "desserts",
+        description: "طبقات رقيقة من العجين مع حشوة جوز أو فستق — تُسقى بالقطر أو العسل."
+    },
+    {
+        id: "dessert-004",
+        name: "أرز باللبن",
+        calories: 220,
+        protein: 6,
+        carbs: 40,
+        fat: 5,
+        serving: "كوب صغير (150 جرام)",
+        category: "desserts",
+        description: "أرز مطهو بالحليب والسكر — يُزين بالقرفة — حلوى مصرية تقليدية."
+    },
+    {
+        id: "dessert-005",
+        name: "بليلة بالقشطة والعسل",
+        calories: 300,
+        protein: 7,
+        carbs: 55,
+        fat: 6,
+        serving: "كوب صغير (150 جرام)",
+        category: "desserts",
+        description: "قمح مسلوق بالحليب، يُقدم مع قشطة وعسل — حلوى شتوية دافئة."
+    },
+    {
+        id: "dessert-006",
+        name: "مهلبية",
+        calories: 180,
+        protein: 4,
+        carbs: 35,
+        fat: 3,
+        serving: "كوب صغير (150 جرام)",
+        category: "desserts",
+        description: "حلوى من الحليب، النشا، والسكر — تُزين بالمكسرات أو القرفة."
+    },
+    {
+        id: "dessert-007",
+        name: "سويسرول بالشوكولاتة",
+        calories: 350,
+        protein: 6,
+        carbs: 50,
+        fat: 14,
+        serving: "شريحة متوسطة",
+        category: "desserts",
+        description: "كعكة إسفنجية ملفوفة مع كريمة شوكولاتة — حلوى غربية شهيرة في مصر."
+    },
+    {
+        id: "dessert-008",
+        name: "تشيز كيك (نيو يورك)",
+        calories: 400,
+        protein: 8,
+        carbs: 35,
+        fat: 25,
+        serving: "قطعة متوسطة",
+        category: "desserts",
+        description: "قاعدة بسكويت مع طبقة جبنة كريمية — تُقدم باردة مع صوص فواكه."
+    },
+    {
+        id: "dessert-009",
+        name: "بسبوسة",
+        calories: 380,
+        protein: 5,
+        carbs: 55,
+        fat: 16,
+        serving: "قطعة متوسطة (80 جرام)",
+        category: "desserts",
+        description: "حلوى من السميد والحليب — تُسقى بالقطر وتُزين بجوز الهند."
+    },
+    {
+        id: "dessert-010",
+        name: " basbousa بالقشطة",
+        calories: 420,
+        protein: 6,
+        carbs: 58,
+        fat: 18,
+        serving: "قطعة متوسطة",
+        category: "desserts",
+        description: "بسبوسة محشية بطبقة قشطة — تُسقى بالقطر — نسخة دسمة ولذيذة."
+    },
+    {
+        id: "dessert-011",
+        name: "هريسة",
+        calories: 400,
+        protein: 4,
+        carbs: 60,
+        fat: 15,
+        serving: "قطعة (80 جرام)",
+        category: "desserts",
+        description: "حلوى من السميد والنارجيل — تُسقى بالقطر — شائعة في الصعيد."
+    },
+    {
+        id: "dessert-012",
+        name: "غريبة",
+        calories: 180,
+        protein: 3,
+        carbs: 20,
+        fat: 10,
+        serving: "قطعة واحدة (30 جرام)",
+        category: "desserts",
+        description: "بسكويت مصري من الدقيق والسمن والسكر — يذوب في الفم."
+    },
+    {
+        id: "dessert-013",
+        name: "بسكويت بالعجوة",
+        calories: 200,
+        protein: 3,
+        carbs: 28,
+        fat: 9,
+        serving: "قطعتين",
+        category: "desserts",
+        description: "بسكويت محشو بعجوة التمر — حلوى رمضانية تقليدية."
+    },
+    {
+        id: "dessert-014",
+        name: "فطير حلو بالعسل",
+        calories: 350,
+        protein: 6,
+        carbs: 50,
+        fat: 12,
+        serving: "قطعة متوسطة",
+        category: "desserts",
+        description: "طبقات من العجين مع زبدة وعسل — تُقدم دافئة — حلوى مصرية شعبية."
+    },
+    {
+        id: "dessert-015",
+        name: "قطايف بالقشطة",
+        calories: 250,
+        protein: 5,
+        carbs: 35,
+        fat: 10,
+        serving: "قطعة واحدة محشية",
+        category: "desserts",
+        description: "حلوى رمضانية — عجينة محشية بالقشطة وتُقلى أو تُخبز ثم تُسقى بالقطر."
+    },
+    {
+        id: "dessert-016",
+        name: "قطايف بالمكسرات",
+        calories: 280,
+        protein: 4,
+        carbs: 38,
+        fat: 12,
+        serving: "قطعة واحدة محشية",
+        category: "desserts",
+        description: "عجينة محشية بجوز وفستق — تُقلى وتُسقى بالقطر — نسخة مقرمشة."
+    },
+    {
+        id: "dessert-017",
+        name: "زلابيا",
+        calories: 300,
+        protein: 3,
+        carbs: 45,
+        fat: 10,
+        serving: "3 قطع متوسطة",
+        category: "desserts",
+        description: "عجينة مقلاة على شكل حلقات — تُنقع في القطر — حلوى رمضانية شعبية."
+    },
+    {
+        id: "dessert-018",
+        name: "لقيمات (لُقم القاضي)",
+        calories: 320,
+        protein: 3,
+        carbs: 50,
+        fat: 10,
+        serving: "4 قطع",
+        category: "desserts",
+        description: "كرات عجين مقلاة ومغطاة بالقطر — تُقدم دافئة — حلوى رمضانية."
+    },
+    {
+        id: "dessert-019",
+        name: "كحك عيد بالعجوة",
+        calories: 250,
+        protein: 4,
+        carbs: 35,
+        fat: 10,
+        serving: "قطعة واحدة",
+        category: "desserts",
+        description: "كحك مصري تقليدي محشو بعجوة التمر — يُزين بالسكر البودرة."
+    },
+    {
+        id: "dessert-020",
+        name: "كحك بالملبن",
+        calories: 280,
+        protein: 4,
+        carbs: 38,
+        fat: 12,
+        serving: "قطعة واحدة",
+        category: "desserts",
+        description: "كحك محشو بملبن الفستق أو الجوز — حلوى العيد الأكثر فخامة."
+    },
+    {
+        id: "dessert-021",
+        name: "كحك بالعجمية",
+        calories: 300,
+        protein: 5,
+        carbs: 40,
+        fat: 14,
+        serving: "قطعة واحدة",
+        category: "desserts",
+        description: "كحك مغطى بطبقة من السكر والحليب (العجمية) — نسخة مميزة من كحك العيد."
+    },
+    {
+        id: "dessert-022",
+        name: "ميل في",
+        calories: 450,
+        protein: 7,
+        carbs: 60,
+        fat: 18,
+        serving: "قطعة متوسطة",
+        category: "desserts",
+        description: "كعكة إسفنجية مع كريمة وفاكهة — تُقدم في المناسبات — حلوى غربية."
+    },
+    {
+        id: "dessert-023",
+        name: "براونيز",
+        calories: 380,
+        protein: 5,
+        carbs: 45,
+        fat: 20,
+        serving: "قطعة متوسطة",
+        category: "desserts",
+        description: "كعكة شوكولاتة كثيفة وغنية — تُقدم مع آيس كريم أو بدون."
+    },
+    {
+        id: "dessert-024",
+        name: "كب كيك فانيليا",
+        calories: 320,
+        protein: 4,
+        carbs: 45,
+        fat: 14,
+        serving: "قطعة واحدة",
+        category: "desserts",
+        description: "كعكة صغيرة مع كريمة فانيليا — مثالية للحفلات والمناسبات."
+    },
+    {
+        id: "dessert-025",
+        name: "دونتس بالشوكولاتة",
+        calories: 280,
+        protein: 4,
+        carbs: 35,
+        fat: 12,
+        serving: "قطعة واحدة",
+        category: "desserts",
+        description: "حلقة مقلاة مغطاة بالشوكولاتة — وجبة سريعة وحلوة."
+    },
+    {
+        id: "dessert-026",
+        name: "دونتس بالفانيليا",
+        calories: 260,
+        protein: 3,
+        carbs: 32,
+        fat: 12,
+        serving: "قطعة واحدة",
+        category: "desserts",
+        description: "دونتس مغطى بكريمة فانيليا ورشة سكر ملون — حلوى غربية شهيرة."
+    },
+    {
+        id: "dessert-027",
+        name: "ترافل شوكولاتة",
+        calories: 120,
+        protein: 2,
+        carbs: 10,
+        fat: 8,
+        serving: "قطعة واحدة (30 جرام)",
+        category: "desserts",
+        description: "كرات شوكولاتة غنية بالكريمة والمكسرات — تذوب في الفم."
+    },
+    {
+        id: "dessert-028",
+        name: "موس شوكولاتة",
+        calories: 300,
+        protein: 5,
+        carbs: 35,
+        fat: 16,
+        serving: "كوب صغير",
+        category: "desserts",
+        description: "حلوى هشة من الشوكولاتة والكريمة — تُقدم باردة — أنيقة وفاخرة."
+    },
+    {
+        id: "dessert-029",
+        name: "بودينج الشوكولاتة",
+        calories: 250,
+        protein: 6,
+        carbs: 35,
+        fat: 10,
+        serving: "كوب صغير",
+        category: "desserts",
+        description: "حلوى من الحليب، الكاكاو، والنشا — تُقدم باردة مع كريمة أو فواكه."
+    },
+    {
+        id: "dessert-030",
+        name: "بودينج الكراميل",
+        calories: 280,
+        protein: 6,
+        carbs: 40,
+        fat: 8,
+        serving: "كوب صغير",
+        category: "desserts",
+        description: "حلوى كاسترد مع طبقة كراميل مكرملة — تُقدم باردة."
+    },
+    {
+        id: "dessert-031",
+        name: "كريم كراميل",
+        calories: 260,
+        protein: 7,
+        carbs: 38,
+        fat: 8,
+        serving: "كوب صغير",
+        category: "desserts",
+        description: "كاسترد ناعم مع كراميل سائل — حلوى فرنسية شهيرة في مصر."
+    },
+    {
+        id: "dessert-032",
+        name: "مهلبية بالشوكولاتة",
+        calories: 220,
+        protein: 5,
+        carbs: 35,
+        fat: 6,
+        serving: "كوب صغير",
+        category: "desserts",
+        description: "مهلبية بنكهة الكاكاو — تُزين بالمكسرات أو جوز الهند."
+    },
+    {
+        id: "dessert-033",
+        name: "موز بكريمة الشوكولاتة",
+        calories: 350,
+        protein: 4,
+        carbs: 50,
+        fat: 14,
+        serving: "طبق صغير",
+        category: "desserts",
+        description: "موز مقطع مع كريمة شوكولاتة ومكسرات — حلوى سهلة ولذيذة."
+    },
+    {
+        id: "dessert-034",
+        name: "فواكه مع عسل وزبادي",
+        calories: 180,
+        protein: 6,
+        carbs: 35,
+        fat: 3,
+        serving: "كوب صغير",
+        category: "desserts",
+        description: "فواكه مقطعة مع زبادي وعسل — نسخة صحية من الحلوى."
+    },
+    {
+        id: "dessert-035",
+        name: "سموثي مانجو",
+        calories: 200,
+        protein: 3,
+        carbs: 45,
+        fat: 2,
+        serving: "كوب (250 مل)",
+        category: "desserts",
+        description: "مانجو طازجة مع حليب أو زبادي — تُقدم باردة — حلوى صيفية منعشة."
+    },
+    {
+        id: "dessert-036",
+        name: "سموثي فراولة",
+        calories: 180,
+        protein: 4,
+        carbs: 40,
+        fat: 2,
+        serving: "كوب (250 مل)",
+        category: "desserts",
+        description: "فراولة مع زبادي وعسل — منعش وخفيف — حلوى صحية."
+    },
+    {
+        id: "dessert-037",
+        name: "آيس كريم فانيليا",
+        calories: 200,
+        protein: 3,
+        carbs: 25,
+        fat: 10,
+        serving: "سكوب واحد (80 جرام)",
+        category: "desserts",
+        description: "آيس كريم كلاسيكي — يُقدم وحده أو مع فواكه أو صوص شوكولاتة."
+    },
+    {
+        id: "dessert-038",
+        name: "آيس كريم شوكولاتة",
+        calories: 220,
+        protein: 4,
+        carbs: 28,
+        fat: 12,
+        serving: "سكوب واحد",
+        category: "desserts",
+        description: "آيس كريم غني بالكاكاو — مفضل لدى الأطفال والكبار."
+    },
+    {
+        id: "dessert-039",
+        name: "آيس كريم فواكه",
+        calories: 160,
+        protein: 2,
+        carbs: 35,
+        fat: 3,
+        serving: "سكوب واحد",
+        category: "desserts",
+        description: "آيس كريم بنكهة المانجو أو الفراولة — منعش ومنخفض الدهون نسبياً."
+    },
+    {
+        id: "dessert-040",
+        name: "سندوتش آيس كريم",
+        calories: 300,
+        protein: 5,
+        carbs: 40,
+        fat: 12,
+        serving: "قطعة واحدة",
+        category: "desserts",
+        description: "آيس كريم محصور بين قطعتين بسكويت — حلوى مجمدة شهيرة."
+    },
+    {
+        id: "dessert-041",
+        name: "ميلك شيك شوكولاتة",
+        calories: 350,
+        protein: 8,
+        carbs: 50,
+        fat: 12,
+        serving: "كوب كبير (300 مل)",
+        category: "desserts",
+        description: "حليب، آيس كريم شوكولاتة، وكاكاو — مشروب حلو وبارد."
+    },
+    {
+        id: "dessert-042",
+        name: "ميلك شيك فانيليا",
+        calories: 320,
+        protein: 7,
+        carbs: 48,
+        fat: 10,
+        serving: "كوب كبير",
+        category: "desserts",
+        description: "آيس كريم فانيليا مع حليب — ناعم وكريمي — مثالي للصيف."
+    },
+    {
+        id: "dessert-043",
+        name: "جيلي بالفواكه",
+        calories: 120,
+        protein: 2,
+        carbs: 28,
+        fat: 0,
+        serving: "كوب صغير",
+        category: "desserts",
+        description: "جيلي ملون مع قطع فواكه — حلوى خفيفة ومناسبة للأطفال."
+    },
+    {
+        id: "dessert-044",
+        name: "مربى الفراولة على التوست",
+        calories: 200,
+        protein: 4,
+        carbs: 35,
+        fat: 5,
+        serving: "شريحتين توست مع ملعقتين مربى",
+        category: "desserts",
+        description: "وجبة خفيفة أو إفطار حلو — بسيطة وسريعة التحضير."
+    },
+    {
+        id: "dessert-045",
+        name: "توست فرنسي (فرنش توست)",
+        calories: 300,
+        protein: 8,
+        carbs: 35,
+        fat: 12,
+        serving: "قطعتين",
+        category: "desserts",
+        description: "خبز مغموس في البيض والحليب ثم مقلي — يُقدم مع عسل أو شوكولاتة."
+    },
+    {
+        id: "dessert-046",
+        name: "بان كيك مع عسل",
+        calories: 280,
+        protein: 6,
+        carbs: 40,
+        fat: 8,
+        serving: "3 قطع صغيرة",
+        category: "desserts",
+        description: "فطائر أمريكية ناعمة — تُقدم مع عسل أو فواكه أو شوكولاتة."
+    },
+    {
+        id: "dessert-047",
+        name: "وافل مع آيس كريم",
+        calories: 400,
+        protein: 7,
+        carbs: 55,
+        fat: 15,
+        serving: "قطعة واحدة مع سكوب آيس كريم",
+        category: "desserts",
+        description: "وافل مقرمش مع آيس كريم وصوص — حلوى غربية شهيرة في الكافيهات."
+    },
+    {
+        id: "dessert-048",
+        name: "شوكولاتة ساخنة",
+        calories: 250,
+        protein: 6,
+        carbs: 35,
+        fat: 10,
+        serving: "كوب (250 مل)",
+        category: "desserts",
+        description: "مشروب دافئ من الحليب والشوكولاتة — مثالي للشتاء."
+    },
+    {
+        id: "dessert-049",
+        name: "كنافة بالمانجو",
+        calories: 400,
+        protein: 6,
+        carbs: 60,
+        fat: 14,
+        serving: "قطعة متوسطة",
+        category: "desserts",
+        description: "نسخة عصرية من الكنافة — مع قطع مانجو طازجة — تُقدم باردة."
+    },
+    {
+        id: "dessert-050",
+        name: "تشيز كيك مانجو",
+        calories: 380,
+        protein: 7,
+        carbs: 45,
+        fat: 18,
+        serving: "قطعة متوسطة",
+        category: "desserts",
+        description: "تشيز كيك مع طبقة مانجو جيليه — حلوى فاخرة ومنعشة."
+    }
+];
+
+// تصدير البيانات
+window.desserts1 = desserts1;

@@ -1,0 +1,144 @@
+/* ===== RESPONSIVE STYLES ===== */
+
+/* للأجهزة اللوحية (أقل من 992px) */
+@media (max-width: 992px) {
+    html {
+        font-size: 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* للأجهزة اللوحية الصغيرة (أقل من 768px) */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-large);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-image {
+        height: 300px;
+        order: 1;
+    }
+
+    .info-content {
+        order: 2;
+    }
+
+    .info-grid.reverse .info-image {
+        order: 1;
+    }
+
+    .info-grid.reverse .info-content {
+        order: 2;
+    }
+
+    /* تعديل القائمة للأجهزة المحمولة */
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--secondary-color);
+        padding: var(--spacing-xl);
+        transition: var(--transition-medium);
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 101;
+        overflow-y: auto; /* إضافة تمرير للقائمة إذا كانت طويلة */
+    }
+
+    .main-nav.active {
+        right: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin: var(--spacing-md) 0;
+        width: 100%; /* جعل العنصر يأخذ العرض الكامل */
+    }
+
+    .nav-link {
+        display: block; /* جعل الرابط يأخذ العرض الكامل */
+        padding: var(--spacing-md) 0; /* زيادة مساحة النقر */
+        font-size: 1.2rem; /* زيادة حجم الخط */
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    
+        z-index: 100;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .overlay.active {
+        display: block;
+        opacity: 1;
+    }
+}
+
+/* للهواتف المحمولة (أقل من 576px) */
+@media (max-width: 576px) {
+    html {
+        font-size: 13px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: var(--font-size-xlarge);
+    }
+
+    .section-subtitle {
+        font-size: var(--font-size-medium);
+    }
+}

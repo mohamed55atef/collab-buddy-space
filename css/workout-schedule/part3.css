@@ -1,0 +1,124 @@
+/**
+ * أنماط خاصة بصفحة جدول التمارين - الجزء الثالث
+ * يحتوي على أنماط النافذة المنبثقة
+ */
+
+/* نافذة إضافة تمرين */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-content {
+    background-color: var(--dark-color);
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-title {
+    margin: 0;
+    font-size: var(--font-size-large);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: var(--spacing-md);
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.search-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+}
+
+.search-box input {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+}
+
+.search-box button {
+    border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+}
+
+.filter-box {
+    flex: 1;
+    min-width: 250px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+}
+
+.filter-group label {
+    margin-left: var(--spacing-sm);
+    white-space: nowrap;
+}
+
+.filter-group select {
+    flex: 1;
+}
+
+.exercise-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+.modal-exercise-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-small);
+    padding: var(--spacing-md);
+}
+
+.modal-footer {
+    padding: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+}

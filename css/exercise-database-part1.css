@@ -1,0 +1,73 @@
+/**
+ * أنماط خاصة بصفحة قاعدة بيانات التمارين
+ */
+
+/* قسم البطل */
+.page-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.page-title {
+    font-size: var(--font-size-xxxlarge);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+    animation: fadeIn 1s ease-in;
+}
+
+.page-subtitle {
+    font-size: var(--font-size-xlarge);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: slideUp 1s ease-in;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    padding: var(--spacing-xxl) 0;
+}
+
+/* قسم قاعدة بيانات التمارين */
+.exercise-database-section {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-large);
+    overflow: hidden;
+    padding: var(--spacing-xl);
+}
+
+/* البحث والتصفية */
+.search-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.search-box {
+    flex: 1;
+    display: flex;
+    min-width: 300px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-medium) 0 0 var(--border-radius-medium);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-size: var(--font-size-medium);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.search-box button {
+    border-radius: 0 var(--border-radius-medium) var(--border-radius-medium) 0;
+    padding: var(--spacing-md) var(--spacing-lg);
+}

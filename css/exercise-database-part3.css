@@ -1,0 +1,107 @@
+/* عناصر التمارين */
+.exercise-items-container {
+    margin-top: var(--spacing-xl);
+}
+
+.exercise-items-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.items-count {
+    color: var(--text-secondary-color);
+    font-size: var(--font-size-medium);
+}
+
+.exercise-items-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    min-height: 400px;
+    position: relative;
+}
+
+.exercise-item {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-medium);
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: var(--transition-medium);
+    display: flex;
+    flex-direction: column;
+}
+
+.exercise-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.exercise-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.exercise-name {
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-large);
+}
+
+.exercise-muscle {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.exercise-equipment {
+    color: var(--text-secondary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-small);
+}
+
+.exercise-item .btn {
+    margin-top: auto;
+}
+
+/* رسائل التحميل والخطأ */
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--text-secondary-color);
+}
+
+.loading-spinner i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.error-message {
+    text-align: center;
+    padding: var(--spacing-xxl) 0;
+    color: var(--text-secondary-color);
+}
+
+.error-message i {
+    font-size: 3rem;
+    color: var(--error-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.no-results {
+    text-align: center;
+    padding: var(--spacing-xxl) 0;
+    color: var(--text-secondary-color);
+}
+
+.no-results i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}

@@ -1,0 +1,8 @@
+/**
+ * أنماط خاصة بصفحة النصائح
+ */
+
+/* استيراد الأجزاء الثلاثة من الملف */
+@import url('tips-part1.css');
+@import url('tips-part2.css');
+@import url('tips-part3.css');

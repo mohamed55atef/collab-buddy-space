@@ -1,0 +1,457 @@
+/**
+ * أنماط خاصة بالصفحة الرئيسية
+ */
+
+/* قسم البطل */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: var(--spacing-xl);
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: var(--font-size-xxxlarge);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+    animation: fadeIn 1s ease-in;
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-xlarge);
+    margin-bottom: var(--spacing-xl);
+    animation: slideUp 1s ease-in;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    animation: fadeIn 1.5s ease-in;
+}
+
+.hero-buttons .btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-medium);
+}
+
+/* قسم الميزات */
+.features {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--bg-color);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 60%;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.feature-card {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-medium);
+    padding: var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-medium);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-large);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.feature-title {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.feature-description {
+    color: var(--text-secondary-color);
+    line-height: 1.6;
+}
+
+/* قسم الخدمات */
+.services {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--secondary-color);
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.service-card {
+    position: relative;
+    height: 300px;
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+}
+
+.service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-medium);
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.1);
+}
+
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--spacing-lg);
+    transition: var(--transition-medium);
+}
+
+.service-card:hover .service-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+}
+
+.service-title {
+    font-size: var(--font-size-large);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-description {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-medium);
+}
+
+.service-card:hover .service-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-medium);
+}
+
+.service-card:hover .service-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-link i {
+    transition: transform 0.3s ease;
+}
+
+.service-link:hover i {
+    transform: translateX(-5px);
+}
+
+/* قسم الإحصائيات */
+.stats {
+    padding: var(--spacing-xxl) 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover fixed;
+    color: var(--text-color);
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    text-align: center;
+}
+
+.stat-item {
+    padding: var(--spacing-lg);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.stat-title {
+    font-size: var(--font-size-medium);
+    color: var(--text-secondary-color);
+}
+
+/* قسم النصائح */
+.tips {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--bg-color);
+}
+
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.tip-card {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-medium);
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-large);
+}
+
+.tip-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.tip-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tip-card:hover .tip-image img {
+    transform: scale(1.05);
+}
+
+.tip-category {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-small) 0 0 0;
+    font-size: var(--font-size-small);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.tip-content {
+    padding: var(--spacing-lg);
+}
+
+.tip-title {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-large);
+    color: var(--primary-color);
+}
+
+.tip-excerpt {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary-color);
+    line-height: 1.6;
+}
+
+.read-more-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.read-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover i {
+    transform: translateX(-5px);
+}
+
+/* قسم الاشتراك */
+.subscribe {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.subscribe-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.subscribe-title {
+    font-size: var(--font-size-xxlarge);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+.subscribe-description {
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-secondary-color);
+    line-height: 1.6;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: var(--font-size-medium);
+}
+
+.subscribe-form button {
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.subscribe-note {
+    font-size: var(--font-size-small);
+    color: var(--text-secondary-color);
+}
+
+/* تصميم متجاوب */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: var(--font-size-xxlarge);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-large);
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .subscribe-form {
+        flex-direction: column;
+    }
+    
+    .subscribe-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: var(--font-size-xlarge);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-medium);
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* الرسوم المتحركة */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

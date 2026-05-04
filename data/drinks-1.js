@@ -1,0 +1,560 @@
+/**
+ * قاعدة بيانات المشروبات - الجزء الأول
+ */
+
+// تصدير مصفوفة المشروبات
+const drinks1 = [
+    {
+        id: "drink-001",
+        name: "عصير برتقال طبيعي",
+        calories: 90,
+        protein: 1.5,
+        carbs: 21,
+        fat: 0.2,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "عصير برتقال طازج معصور بدون سكر — غني بفيتامين C — مشروب صباحي مصري."
+    },
+    {
+        id: "drink-002",
+        name: "عصير يوسفي طبيعي",
+        calories: 85,
+        protein: 1.2,
+        carbs: 20,
+        fat: 0.2,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "عصير يوسفي مصري منعش — يُشرب في الشتاء — غني بمضادات الأكسدة."
+    },
+    {
+        id: "drink-003",
+        name: "عصير مانجو طبيعي",
+        calories: 130,
+        protein: 1,
+        carbs: 32,
+        fat: 0.3,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "عصير مانجو طازج بدون سكر — مشروب صيفي مصري كلاسيكي."
+    },
+    {
+        id: "drink-004",
+        name: "عصير جوافة طبيعي",
+        calories: 110,
+        protein: 2.5,
+        carbs: 25,
+        fat: 0.8,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "عصير جوافة طازج — أعلى فاكهة في فيتامين C — منعش وصحي."
+    },
+    {
+        id: "drink-005",
+        name: "عصير فراولة طبيعي",
+        calories: 70,
+        protein: 1,
+        carbs: 16,
+        fat: 0.4,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "عصير فراولة طازج — يُضاف له قليل من السكر أو عسل — منعش ووردي."
+    },
+    {
+        id: "drink-006",
+        name: "عصير جزر طبيعي",
+        calories: 95,
+        protein: 1.5,
+        carbs: 22,
+        fat: 0.3,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "عصير جزر طازج — غني بفيتامين A — يُشرب لتحسين النظر والبشرة."
+    },
+    {
+        id: "drink-007",
+        name: "عصير قصب",
+        calories: 110,
+        protein: 0.5,
+        carbs: 27,
+        fat: 0.2,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "عصير قصب طازج معصور — مشروب شعبي مصري — يُباع في الشوارع."
+    },
+    {
+        id: "drink-008",
+        name: "تمر هندي طبيعي",
+        calories: 150,
+        protein: 1,
+        carbs: 38,
+        fat: 0.5,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "عصير تمر هندي منقوع ومصفى — ملين طبيعي ومنعش — مشروب رمضاني."
+    },
+    {
+        id: "drink-009",
+        name: "خروب طبيعي",
+        calories: 130,
+        protein: 1,
+        carbs: 32,
+        fat: 0.3,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "عصير خروب منقوع — مشروب رمضاني تقليدي — غني بالألياف."
+    },
+    {
+        id: "drink-010",
+        name: "كركديه بارد",
+        calories: 5,
+        protein: 0.5,
+        carbs: 1,
+        fat: 0,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "مشروب أعشاب طبيعي — منعش ومضاد للأكسدة — يُشرب بارد في الصيف."
+    },
+    {
+        id: "drink-011",
+        name: "كركديه ساخن",
+        calories: 5,
+        protein: 0.5,
+        carbs: 1,
+        fat: 0,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "مشروب شتوي مصري — يُحلى بسكر أو عسل — مهدئ وغني بفيتامين C."
+    },
+    {
+        id: "drink-012",
+        name: "سحلب",
+        calories: 200,
+        protein: 6,
+        carbs: 35,
+        fat: 5,
+        serving: "كوب صغير (200 مل)",
+        category: "drinks",
+        description: "مشروب شتوي دافئ من الحليب، النشا، وجوز الهند — يُزين بالقرفة والمكسرات."
+    },
+    {
+        id: "drink-013",
+        name: "سوبيا",
+        calories: 180,
+        protein: 2,
+        carbs: 40,
+        fat: 2,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "مشروب رمضاني مصري — من الأرز، جوز الهند، والحليب — بارد ومنعش."
+    },
+    {
+        id: "drink-014",
+        name: "قهوة عربية (سوداء)",
+        calories: 2,
+        protein: 0.2,
+        carbs: 0.3,
+        fat: 0,
+        serving: "فنجان صغير (60 مل)",
+        category: "drinks",
+        description: "قهوة مطحونة مع هيل — تُحلى بالسكر أو بدون — مشروب ضيافة تقليدي."
+    },
+    {
+        id: "drink-015",
+        name: "قهوة تركية (سوداء)",
+        calories: 2,
+        protein: 0.2,
+        carbs: 0.3,
+        fat: 0,
+        serving: "فنجان صغير (60 مل)",
+        category: "drinks",
+        description: "قهوة مطحونة ناعمة — تُغلى مع الماء — تُحلى حسب الرغبة."
+    },
+    {
+        id: "drink-016",
+        name: "نسكافيه (مع حليب وسكر)",
+        calories: 80,
+        protein: 2,
+        carbs: 12,
+        fat: 2,
+        serving: "كوب (200 مل)",
+        category: "drinks",
+        description: "قهوة سريعة التحضير — تُحضّر مع الحليب والسكر — مشروب يومي."
+    },
+    {
+        id: "drink-017",
+        name: "قهوة أمريكano (سوداء)",
+        calories: 5,
+        protein: 0.3,
+        carbs: 0.5,
+        fat: 0,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "قهوة إسبريسو مخففة بالماء — منعشة ومنخفضة السعرات."
+    },
+    {
+        id: "drink-018",
+        name: "لاتيه (مع حليب)",
+        calories: 120,
+        protein: 6,
+        carbs: 12,
+        fat: 5,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "إسبريسو مع حليب مبخر — كريمية وخفيفة — مشروب كافيهات شهير."
+    },
+    {
+        id: "drink-019",
+        name: "كابتشينو",
+        calories: 100,
+        protein: 5,
+        carbs: 10,
+        fat: 4,
+        serving: "كوب (200 مل)",
+        category: "drinks",
+        description: "إسبريسو مع حليب ورغوة — يُزين بالكاكاو — مشروب كلاسيكي."
+    },
+    {
+        id: "drink-020",
+        name: "شاي باللبن",
+        calories: 60,
+        protein: 3,
+        carbs: 8,
+        fat: 2,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "شاي أسود مع حليب — مشروب يومي في البيوت المصرية — يُحلى بالسكر."
+    },
+    {
+        id: "drink-021",
+        name: "شاي بالنعناع",
+        calories: 0,
+        protein: 0,
+        carbs: 0,
+        fat: 0,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "شاي أخضر أو أسود مع نعناع طازج — منعش ومهدئ للمعدة."
+    },
+    {
+        id: "drink-022",
+        name: "شاي بالخبيزة",
+        calories: 5,
+        protein: 0.5,
+        carbs: 1,
+        fat: 0,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "شاي أعشاب مصري تقليدي — يُستخدم كمهدئ وطارد للغازات."
+    },
+    {
+        id: "drink-023",
+        name: "ينسون (حبة حلوة)",
+        calories: 5,
+        protein: 0.3,
+        carbs: 1,
+        fat: 0,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "مشروب ينسون دافئ — يُشرب بعد الأكل — مهدئ وطارد للغازات."
+    },
+    {
+        id: "drink-024",
+        name: "زنجبيل وليمون (ساخن)",
+        calories: 10,
+        protein: 0.2,
+        carbs: 2.5,
+        fat: 0,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "مشروب من الزنجبيل الطازج وعصير الليمون — منشط ومناعي."
+    },
+    {
+        id: "drink-025",
+        name: "قرفة وليمون (ساخن)",
+        calories: 10,
+        protein: 0.2,
+        carbs: 2.5,
+        fat: 0,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "مشروب دافئ من القرفة والليمون — يُساعد على حرق الدهون وتنشيط الدورة."
+    },
+    {
+        id: "drink-026",
+        name: "ماء جوز الهند الطبيعي",
+        calories: 45,
+        protein: 0.5,
+        carbs: 11,
+        fat: 0.2,
+        serving: "علبة (330 مل)",
+        category: "drinks",
+        description: "مشروب طبيعي منعش — غني بالكهارل — مثالي بعد الرياضة."
+    },
+    {
+        id: "drink-027",
+        name: "لبن رائب (مخيضة)",
+        calories: 60,
+        protein: 4,
+        carbs: 5,
+        fat: 2,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "لبن مخفوق مع الماء والملح — مشروب مصري تقليدي — منعش ومفيد للأمعاء."
+    },
+    {
+        id: "drink-028",
+        name: "لبن زبادي بالعسل",
+        calories: 150,
+        protein: 6,
+        carbs: 25,
+        fat: 3,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "زبادي مخفوق مع عسل طبيعي — مشروب صحي وغني بالبروبيوتيك."
+    },
+    {
+        id: "drink-029",
+        name: "سموثي مانجو",
+        calories: 200,
+        protein: 4,
+        carbs: 45,
+        fat: 2,
+        serving: "كوب (300 مل)",
+        category: "drinks",
+        description: "مانجو + لبن + عسل — مشروب صيفي كثيف ومنعش."
+    },
+    {
+        id: "drink-030",
+        name: "سموثي فراولة",
+        calories: 180,
+        protein: 5,
+        carbs: 35,
+        fat: 3,
+        serving: "كوب (300 مل)",
+        category: "drinks",
+        description: "فراولة + زبادي + عسل — منعش وغني بفيتامين C."
+    },
+    {
+        id: "drink-031",
+        name: "سموثي موز",
+        calories: 220,
+        protein: 5,
+        carbs: 50,
+        fat: 3,
+        serving: "كوب (300 مل)",
+        category: "drinks",
+        description: "موز + لبن + عسل — مشروب طاقة سريع — مثالي قبل أو بعد التمرين."
+    },
+    {
+        id: "drink-032",
+        name: "سموثي أخضر (سبانخ + تفاح + ليمون)",
+        calories: 120,
+        protein: 3,
+        carbs: 25,
+        fat: 1,
+        serving: "كوب (300 مل)",
+        category: "drinks",
+        description: "مشروب ديتوكس — من السبانخ، التفاح، والليمون — منشط ومنقي للجسم."
+    },
+    {
+        id: "drink-033",
+        name: "ميلك شيك شوكولاتة",
+        calories: 350,
+        protein: 8,
+        carbs: 50,
+        fat: 12,
+        serving: "كوب كبير (400 مل)",
+        category: "drinks",
+        description: "آيس كريم شوكولاتة + حليب — كريمي وحلو — مفضل لدى الأطفال."
+    },
+    {
+        id: "drink-034",
+        name: "ميلك شيك فانيليا",
+        calories: 320,
+        protein: 7,
+        carbs: 48,
+        fat: 10,
+        serving: "كوب كبير (400 مل)",
+        category: "drinks",
+        description: "آيس كريم فانيليا + حليب — ناعم وكريمي — مثالي للصيف."
+    },
+    {
+        id: "drink-035",
+        name: "ميلك شيك فراولة",
+        calories: 300,
+        protein: 6,
+        carbs: 55,
+        fat: 8,
+        serving: "كوب كبير (400 مل)",
+        category: "drinks",
+        description: "آيس كريم فراولة + حليب — وردي ومنعش — حلوى شراب."
+    },
+    {
+        id: "drink-036",
+        name: "شوكولاتة ساخنة",
+        calories: 250,
+        protein: 6,
+        carbs: 35,
+        fat: 10,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "كاكاو + حليب + سكر — مشروب شتوي دافئ — مريح ومحبب."
+    },
+    {
+        id: "drink-037",
+        name: "شوكولاتة باردة",
+        calories: 280,
+        protein: 6,
+        carbs: 40,
+        fat: 12,
+        serving: "كوب (300 مل)",
+        category: "drinks",
+        description: "كاكاو + حليب + ثلج — مشروب صيفي كريمي — يُقدم مع آيس كريم أحياناً."
+    },
+    {
+        id: "drink-038",
+        name: "عصير توت طبيعي",
+        calories: 75,
+        protein: 1,
+        carbs: 18,
+        fat: 0.5,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "مزيج من التوت الأحمر والأزرق — مضاد أكسدة قوي — منعش وحمضي."
+    },
+    {
+        id: "drink-039",
+        name: "عصير أناناس طبيعي",
+        calories: 110,
+        protein: 0.8,
+        carbs: 27,
+        fat: 0.2,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "أناناس طازج معصور — يحتوي على إنزيم البروميلين المفيد للهضم."
+    },
+    {
+        id: "drink-040",
+        name: "عصير بطيخ طبيعي",
+        calories: 50,
+        protein: 1,
+        carbs: 12,
+        fat: 0.2,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "عصير بطيخ طازج — مرطب جداً — مثالي في الصيف."
+    },
+    {
+        id: "drink-041",
+        name: "عصير رمان طبيعي",
+        calories: 120,
+        protein: 1,
+        carbs: 28,
+        fat: 0.5,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "عصير رمان طازج — غني بمضادات الأكسدة — يُشرب لتنقية الدم."
+    },
+    {
+        id: "drink-042",
+        name: "ماء بالليمون والنعناع",
+        calories: 5,
+        protein: 0.1,
+        carbs: 1,
+        fat: 0,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "ماء مع شرائح ليمون وأوراق نعناع — منعش وخالي السعرات — مثالي للدايت."
+    },
+    {
+        id: "drink-043",
+        name: "ماء بالخيار والنعناع",
+        calories: 5,
+        protein: 0.2,
+        carbs: 1,
+        fat: 0,
+        serving: "كوب (250 مل)",
+        category: "drinks",
+        description: "ماء منقوع بالخيار والنعناع — منعش ومهدئ — يُستخدم في الديتوكس."
+    },
+    {
+        id: "drink-044",
+        name: "بيبسي عادي",
+        calories: 140,
+        protein: 0,
+        carbs: 38,
+        fat: 0,
+        serving: "علبة (330 مل)",
+        category: "drinks",
+        description: "مشروب غازي بنكهة الكولا — عالي السكر — منعش لكن غير صحي."
+    },
+    {
+        id: "drink-045",
+        name: "بيبسي دايت",
+        calories: 0,
+        protein: 0,
+        carbs: 0,
+        fat: 0,
+        serving: "علبة (330 مل)",
+        category: "drinks",
+        description: "نسخة خالية من السكر — محلاة بمحليات صناعية — مناسبة للدايت."
+    },
+    {
+        id: "drink-046",
+        name: "سفن أب",
+        calories: 130,
+        protein: 0,
+        carbs: 35,
+        fat: 0,
+        serving: "علبة (330 مل)",
+        category: "drinks",
+        description: "مشروب غازي بنكهة الليمون — منعش وحمضي — يُفضل مع الوجبات السريعة."
+    },
+    {
+        id: "drink-047",
+        name: "فانتا برتقال",
+        calories: 140,
+        protein: 0,
+        carbs: 38,
+        fat: 0,
+        serving: "علبة (330 مل)",
+        category: "drinks",
+        description: "مشروب غازي بنكهة البرتقال — حلو ومرطب — مفضل لدى الأطفال."
+    },
+    {
+        id: "drink-048",
+        name: "ريد بول",
+        calories: 110,
+        protein: 0,
+        carbs: 28,
+        fat: 0,
+        serving: "علبة (250 مل)",
+        category: "drinks",
+        description: "مشروب طاقة — يحتوي على كافيين وتورين — يُستخدم للتركيز والنشاط."
+    },
+    {
+        id: "drink-049",
+        name: "مونستر",
+        calories: 210,
+        protein: 0,
+        carbs: 54,
+        fat: 0,
+        serving: "علبة (500 مل)",
+        category: "drinks",
+        description: "مشروب طاقة كبير — عالي السكر والكافيين — يُستخدم قبل التمارين أو العمل."
+    },
+    {
+        id: "drink-050",
+        name: "ماء جوز الهند معلب (Zico أو Vita Coco)",
+        calories: 45,
+        protein: 0.5,
+        carbs: 11,
+        fat: 0.2,
+        serving: "علبة (330 مل)",
+        category: "drinks",
+        description: "بديل صحي للمشروبات الغازية — غني بالبوتاسيوم — منعش بعد الرياضة."
+    }
+];
+
+// تصدير البيانات
+window.drinks1 = drinks1;

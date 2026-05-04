@@ -1,0 +1,111 @@
+,
+            {
+              "name": "الغداء",
+              "calories": 800,
+              "items": [
+                {
+                  "name": "ستيك لحم",
+                  "quantity": 200,
+                  "calories": 500,
+                  "protein": 52,
+                  "carbs": 0,
+                  "fat": 34
+                },
+                {
+                  "name": "أرز أبيض",
+                  "quantity": 150,
+                  "calories": 195,
+                  "protein": 4.05,
+                  "carbs": 42,
+                  "fat": 0.45
+                },
+                {
+                  "name": "سلطة خضراء",
+                  "quantity": 1,
+                  "calories": 50,
+                  "protein": 2,
+                  "carbs": 10,
+                  "fat": 0.5
+                },
+                {
+                  "name": "زيت زيتون",
+                  "quantity": 15,
+                  "calories": 120,
+                  "protein": 0,
+                  "carbs": 0,
+                  "fat": 14
+                }
+              ]
+            },
+            {
+              "name": "وجبة خفيفة 2",
+              "calories": 350,
+              "items": [
+                {
+                  "name": "شطيرة تونة",
+                  "quantity": 1,
+                  "calories": 350,
+                  "protein": 20,
+                  "carbs": 30,
+                  "fat": 15
+                }
+              ]
+            },
+            {
+              "name": "العشاء",
+              "calories": 700,
+              "items": [
+                {
+                  "name": "دجاج مشوي",
+                  "quantity": 200,
+                  "calories": 330,
+                  "protein": 62,
+                  "carbs": 0,
+                  "fat": 7.2
+                },
+                {
+                  "name": "بطاطس مشوية",
+                  "quantity": 200,
+                  "calories": 154,
+                  "protein": 4,
+                  "carbs": 34,
+                  "fat": 0.2
+                },
+                {
+                  "name": "خضار مشوية",
+                  "quantity": 1,
+                  "calories": 80,
+                  "protein": 3,
+                  "carbs": 15,
+                  "fat": 1
+                },
+                {
+                  "name": "زبدة",
+                  "quantity": 15,
+                  "calories": 108,
+                  "protein": 0.1,
+                  "carbs": 0.1,
+                  "fat": 12
+                }
+              ]
+            },
+            {
+              "name": "وجبة خفيفة 3",
+              "calories": 300,
+              "items": [
+                {
+                  "name": "بروتين شيك",
+                  "quantity": 1,
+                  "calories": 300,
+                  "protein": 25,
+                  "carbs": 30,
+                  "fat": 10
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

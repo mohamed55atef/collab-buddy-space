@@ -1,0 +1,159 @@
+/**
+ * أنماط خاصة بصفحة جدول التمارين - الجزء الثاني
+ * يحتوي على أنماط جدول التمارين
+ */
+
+/* جدول التمارين */
+.workout-schedule {
+    margin-top: var(--spacing-xl);
+    display: none;
+}
+
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+}
+
+.schedule-info {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.info-label {
+    font-weight: 600;
+    margin-left: var(--spacing-xs);
+}
+
+.info-value {
+    color: var(--primary-color);
+}
+
+.schedule-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.workout-days {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.workout-day {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.day-title {
+    font-size: var(--font-size-large);
+    margin: 0;
+}
+
+.exercises-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.exercise-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-small);
+    padding: var(--spacing-sm);
+    transition: all 0.3s ease;
+}
+
+.exercise-item:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.exercise-info {
+    flex: 1;
+}
+
+.exercise-name {
+    font-size: var(--font-size-medium);
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.exercise-details {
+    display: flex;
+    gap: var(--spacing-sm);
+    color: var(--text-secondary-color);
+    font-size: var(--font-size-small);
+}
+
+.exercise-muscle,
+.exercise-equipment {
+    display: flex;
+    align-items: center;
+}
+
+.exercise-muscle::before,
+.exercise-equipment::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: var(--spacing-xs);
+}
+
+.exercise-muscle::before {
+    content: "\f5cf"; /* fa-dumbbell */
+}
+
+.exercise-equipment::before {
+    content: "\f6e2"; /* fa-weight */
+}
+
+.exercise-sets-reps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 var(--spacing-md);
+}
+
+.sets, .reps {
+    font-size: var(--font-size-small);
+}
+
+.exercise-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}

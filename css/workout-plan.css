@@ -1,0 +1,37 @@
+/**
+ * أنماط خاصة بصفحة جدول التمارين
+ */
+
+/* استيراد الأجزاء الثلاثة من الملف */
+@import url('workout-plan-part1.css');
+@import url('workout-plan-part2.css');
+@import url('workout-plan-part3.css');
+
+/* رسائل التأكيد والخطأ */
+.confirm-message,
+.error-message {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    z-index: 1000;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+.confirm-message {
+    background-color: #2ecc71;
+}
+
+.error-message {
+    background-color: #e74c3c;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
+}
