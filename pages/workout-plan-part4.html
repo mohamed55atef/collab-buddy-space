@@ -1,0 +1,150 @@
+                <!-- Workout Plan -->
+                <div class="workout-plan" id="workout-plan">
+                    <h2 class="section-title">جدول التمارين الأسبوعي</h2>
+                    
+                    <div class="plan-header">
+                        <div class="plan-info">
+                            <div class="plan-goal">
+                                <span class="info-label">الهدف:</span>
+                                <span class="info-value" id="plan-goal-value">بناء العضلات</span>
+                            </div>
+                            <div class="plan-level">
+                                <span class="info-label">المستوى:</span>
+                                <span class="info-value" id="plan-level-value">متوسط</span>
+                            </div>
+                            <div class="plan-days">
+                                <span class="info-label">عدد الأيام:</span>
+                                <span class="info-value" id="plan-days-value">4 أيام</span>
+                            </div>
+                        </div>
+                        <div class="plan-actions">
+                            <button id="edit-plan-btn" class="btn btn-secondary">
+                                <i class="fas fa-edit"></i> تعديل
+                            </button>
+                            <button id="save-plan-btn" class="btn btn-primary">
+                                <i class="fas fa-save"></i> حفظ
+                            </button>
+                            <button id="print-plan-btn" class="btn btn-secondary">
+                                <i class="fas fa-print"></i> طباعة
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="workout-days" id="workout-days">
+                        <!-- سيتم إضافة أيام التمرين هنا بواسطة JavaScript -->
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>جاري إنشاء جدول التمارين...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise Modal -->
+                <div class="modal" id="exercise-modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title">إضافة تمرين</h2>
+                            <button class="modal-close" id="modal-close">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="search-filter-container">
+                                <div class="search-box">
+                                    <input type="text" id="exercise-search" placeholder="ابحث عن تمرين...">
+                                    <button id="search-btn" class="btn btn-primary">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                <div class="filter-box">
+                                    <div class="filter-group">
+                                        <label for="muscle-filter">تصفية حسب العضلة:</label>
+                                        <select id="muscle-filter">
+                                            <option value="all">جميع العضلات</option>
+                                            <option value="chest">الصدر</option>
+                                            <option value="back">الظهر</option>
+                                            <option value="shoulders">الأكتاف</option>
+                                            <option value="biceps">البايسبس</option>
+                                            <option value="triceps">الترايسبس</option>
+                                            <option value="legs">الأرجل</option>
+                                            <option value="abs">البطن</option>
+                                            <option value="cardio">القلب</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="exercise-list" id="exercise-list">
+                                <!-- سيتم إضافة التمارين هنا بواسطة JavaScript -->
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" id="modal-close-btn">إغلاق</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <i class="fas fa-apple-alt"></i>
+                        <span>تغذية ولياقة</span>
+                    </div>
+                    <p>موقعك الشامل للتغذية والتدريب في الجيم. نقدم لك أفضل النصائح والأدوات لتحقيق أهدافك في اللياقة البدنية.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="calories.html">حساب السعرات</a></li>
+                        <li><a href="meal-plan.html">خطة الوجبات</a></li>
+                        <li><a href="workout-plan.html">جدول التمارين</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">قواعد البيانات</h3>
+                    <ul class="footer-links">
+                        <li><a href="food-database.html">قاعدة بيانات الأكلات</a></li>
+                        <li><a href="food-database.html?category=carbs">النشويات</a></li>
+                        <li><a href="food-database.html?category=vegetables">الخضروات</a></li>
+                        <li><a href="food-database.html?category=fruits">الفواكه</a></li>
+                        <li><a href="exercise-database.html">قاعدة بيانات التمارين</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">نصائح وإرشادات</h3>
+                    <ul class="footer-links">
+                        <li><a href="tips.html?category=nutrition">نصائح التغذية</a></li>
+                        <li><a href="tips.html?category=training">نصائح التدريب</a></li>
+                        <li><a href="tips.html?category=lifestyle">نصائح نمط الحياة</a></li>
+                        <li><a href="tips.html">جميع النصائح</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    جميع الحقوق محفوظة &copy; <span id="year"></span> تغذية ولياقة | تم التصميم بـ <i class="fas fa-heart"></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/workout-plan.js"></script>
+</body>
+</html>

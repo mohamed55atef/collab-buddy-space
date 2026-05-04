@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="حساب السعرات الحرارية وكتلة الجسم - موقع تغذية ولياقة">
+    <title>حساب السعرات الحرارية | تغذية ولياقة</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/calories.css">
+    <link rel="stylesheet" href="../css/mobile-menu-fix.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <i class="fas fa-dumbbell"></i>
+                        <i class="fas fa-apple-alt"></i>
+                        <span>Everyday Fitness</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="../index.html" class="nav-link">الرئيسية</a></li>
+                        <li class="nav-item"><a href="calories.html" class="nav-link active">حساب السعرات</a></li>
+                        <li class="nav-item"><a href="meal-plan.html" class="nav-link">خطة الوجبات</a></li>
+                        <li class="nav-item"><a href="food-database.html" class="nav-link">قاعدة بيانات الأكلات</a></li>
+                        <li class="nav-item"><a href="workout-schedule.html" class="nav-link">جدول التمارين</a></li>
+                        <li class="nav-item"><a href="exercise-database.html" class="nav-link">قاعدة بيانات التمارين</a></li>
+                        <li class="nav-item"><a href="tips.html" class="nav-link">نصائح</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">من نحن</a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="theme-switcher">
+                    <button id="theme-toggle" class="btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title">حساب السعرات الحرارية</h1>
+                <p class="page-subtitle">احسب احتياجاتك اليومية من السعرات الحرارية وكتلة الجسم المثالية</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="calculator-section">
+                <div class="calculator-tabs">
+                    <button class="tab-btn active" data-tab="calories">حساب السعرات الحرارية</button>
+                    <button class="tab-btn" data-tab="bmi">حساب مؤشر كتلة الجسم</button>
+                    <button class="tab-btn" data-tab="macros">توزيع العناصر الغذائية</button>
+                </div>
+
+                <!-- Calories Calculator Tab -->
+                <div class="tab-content active" id="calories-tab">
+                    <div class="calculator-form">
+                        <h2 class="form-title">حساب السعرات الحرارية اليومية</h2>
+                        <p class="form-description">أدخل بياناتك لحساب احتياجاتك اليومية من السعرات الحرارية</p>
+
+                        <form id="calories-form">
+                            <div class="form-group">
+                                <label for="gender">الجنس</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="male" checked>
+                                        <span class="radio-text">ذكر</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="female">
+                                        <span class="radio-text">أنثى</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="age">العمر (سنة)</label>
+                                    <input type="number" id="age" name="age" min="15" max="80" placeholder="أدخل عمرك" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="height">الطول (سم)</label>
+                                    <input type="number" id="height" name="height" min="140" max="220" placeholder="أدخل طولك" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="weight">الوزن (كجم)</label>
+                                    <input type="number" id="weight" name="weight" min="40" max="200" placeholder="أدخل وزنك" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="activity">مستوى النشاط</label>
+                                    <select id="activity" name="activity" required>
+                                        <option value="" disabled selected>اختر مستوى نشاطك</option>
+                                        <option value="1.2">خامل (قليل أو معدوم النشاط)</option>
+                                        <option value="1.375">خفيف (تمارين خفيفة 1-3 أيام/أسبوع)</option>
+                                        <option value="1.55">متوسط (تمارين متوسطة 3-5 أيام/أسبوع)</option>
+                                        <option value="1.725">نشط (تمارين شاقة 6-7 أيام/أسبوع)</option>
+                                        <option value="1.9">نشط جداً (تمارين شاقة يومياً أو عمل بدني)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="goal">الهدف</label>
+                                <select id="goal" name="goal" required>
+                                    <option value="" disabled selected>اختر هدفك</option>
+                                    <option value="lose">فقدان الوزن</option>
+                                    <option value="maintain">الحفاظ على الوزن</option>
+                                    <option value="gain">زيادة الوزن</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-calculator"></i> حساب السعرات
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="fas fa-redo"></i> إعادة تعيين
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="calculator-results" id="calories-results">
+                        <h2 class="results-title">نتائج حساب السعرات الحرارية</h2>
+                        <div class="results-content">
+                            <div class="result-card">
+                                <div class="result-icon">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="result-value" id="bmr-value">0</div>
+                                <div class="result-label">معدل الأيض الأساسي (BMR)</div>
+                                <div class="result-description">عدد السعرات الحرارية التي يحتاجها جسمك للحفاظ على وظائفه الأساسية في حالة الراحة التامة.</div>
+                            </div>
+
+                            <div class="result-card highlight">
+                                <div class="result-icon">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <div class="result-value" id="tdee-value">0</div>
+                                <div class="result-label">إجمالي السعرات اليومية (TDEE)</div>
+                                <div class="result-description">إجمالي السعرات الحرارية التي يحتاجها جسمك يومياً بناءً على مستوى نشاطك.</div>
+                            </div>
+
+                            <div class="result-card">
+                                <div class="result-icon">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <div class="result-value" id="goal-value">0</div>
+                                <div class="result-label">السعرات المطلوبة لتحقيق هدفك</div>
+                                <div class="result-description">عدد السعرات الحرارية اليومية المطلوبة لتحقيق هدفك من فقدان أو زيادة أو الحفاظ على الوزن.</div>
+                            </div>
+                        </div>
+
+                        <div class="results-note">
+                            <p><strong>ملاحظة:</strong> هذه النتائج تقديرية وقد تختلف من شخص لآخر. يفضل استشارة أخصائي تغذية للحصول على خطة غذائية مخصصة.</p>
+                        </div>
+
+                        <div class="results-actions">
+                            <a href="meal-plan.html" class="btn btn-primary">
+                                <i class="fas fa-utensils"></i> إنشاء خطة وجبات
+                            </a>
+                            <button id="save-results" class="btn btn-secondary">
+                                <i class="fas fa-save"></i> حفظ النتائج
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BMI Calculator Tab -->
+                <div class="tab-content" id="bmi-tab">
+                    <div class="calculator-form">
+                        <h2 class="form-title">حساب مؤشر كتلة الجسم</h2>
+                        <p class="form-description">أدخل وزنك وطولك لحساب مؤشر كتلة الجسم (BMI)</p>
+
+                        <form id="bmi-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="bmi-weight">الوزن (كجم)</label>
+                                    <input type="number" id="bmi-weight" name="bmi-weight" min="30" max="300" placeholder="أدخل وزنك" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="bmi-height">الطول (سم)</label>
+                                    <input type="number" id="bmi-height" name="bmi-height" min="100" max="250" placeholder="أدخل طولك" required>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-calculator"></i> حساب مؤشر كتلة الجسم
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="fas fa-redo"></i> إعادة تعيين
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="calculator-results" id="bmi-results">
+                        <h2 class="results-title">نتيجة حساب مؤشر كتلة الجسم</h2>
+                        <div class="results-content">
+                            <div class="result-card highlight">
+                                <div class="result-icon">
+                                    <i class="fas fa-weight"></i>
+                                </div>
+                                <div class="result-value" id="bmi-value">0</div>
+                                <div class="result-label">مؤشر كتلة الجسم (BMI)</div>
+                                <div class="result-category" id="bmi-category">أدخل بياناتك لحساب مؤشر كتلة الجسم</div>
+                            </div>
+                        </div>
+
+                        <div class="bmi-scale">
+                            <div class="scale-item" data-category="underweight">
+                                <div class="scale-bar"></div>
+                                <div class="scale-label">نقص الوزن</div>
+                                <div class="scale-range">&lt; 18.5</div>
+                            </div>
+                            <div class="scale-item" data-category="normal">
+                                <div class="scale-bar"></div>
+                                <div class="scale-label">وزن طبيعي</div>
+                                <div class="scale-range">18.5 - 24.9</div>
+                            </div>
+                            <div class="scale-item" data-category="overweight">
+                                <div class="scale-bar"></div>
+                                <div class="scale-label">زيادة الوزن</div>
+                                <div class="scale-range">25 - 29.9</div>
+                            </div>
+                            <div class="scale-item" data-category="obese">
+                                <div class="scale-bar"></div>
+                                <div class="scale-label">سمنة</div>
+                                <div class="scale-range">&gt; 30</div>
+                            </div>
+                        </div>
+
+                        <div class="results-note">
+                            <p><strong>ما هو مؤشر كتلة الجسم؟</strong> مؤشر كتلة الجسم (BMI) هو مقياس للوزن بالنسبة للطول، ويستخدم لتصنيف الوزن إلى نقص وزن، وزن طبيعي، زيادة وزن، أو سمنة. يتم حسابه بقسمة الوزن (كجم) على مربع الطول (متر).</p>
+                            <p><strong>ملاحظة:</strong> مؤشر كتلة الجسم هو مؤشر عام ولا يأخذ في الاعتبار تكوين الجسم (نسبة العضلات والدهون) أو توزيع الدهون في الجسم.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Macros Calculator Tab -->
+                <div class="tab-content" id="macros-tab">
+                    <div class="calculator-form">
+                        <h2 class="form-title">حساب توزيع العناصر الغذائية</h2>
+                        <p class="form-description">أدخل بياناتك لحساب توزيع العناصر الغذائية المناسب لك</p>
+
+                        <form id="macros-form">
+                            <div class="form-group">
+                                <label for="macro-gender">الجنس</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="macro-gender" value="male" checked>
+                                        <span class="radio-text">ذكر</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="macro-gender" value="female">
+                                        <span class="radio-text">أنثى</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="macro-age">العمر (سنة)</label>
+                                    <input type="number" id="macro-age" name="macro-age" min="15" max="80" placeholder="أدخل عمرك" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="macro-height">الطول (سم)</label>
+                                    <input type="number" id="macro-height" name="macro-height" min="140" max="220" placeholder="أدخل طولك" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="macro-weight">الوزن (كجم)</label>
+                                    <input type="number" id="macro-weight" name="macro-weight" min="40" max="200" placeholder="أدخل وزنك" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="macro-activity">مستوى النشاط</label>
+                                    <select id="macro-activity" name="macro-activity" required>
+                                        <option value="" disabled selected>اختر مستوى نشاطك</option>
+                                        <option value="1.2">خامل (قليل أو معدوم النشاط)</option>
+                                        <option value="1.375">خفيف (تمارين خفيفة 1-3 أيام/أسبوع)</option>
+                                        <option value="1.55">متوسط (تمارين متوسطة 3-5 أيام/أسبوع)</option>
+                                        <option value="1.725">نشط (تمارين شاقة 6-7 أيام/أسبوع)</option>
+                                        <option value="1.9">نشط جداً (تمارين شاقة يومياً أو عمل بدني)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="macro-goal">الهدف</label>
+                                <select id="macro-goal" name="macro-goal" required>
+                                    <option value="" disabled selected>اختر هدفك</option>
+                                    <option value="cut">فقدان الوزن</option>
+                                    <option value="maintain">الحفاظ على الوزن</option>
+                                    <option value="bulk">زيادة الوزن وبناء العضلات</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-calculator"></i> حساب توزيع العناصر الغذائية
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="fas fa-redo"></i> إعادة تعيين
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="calculator-results" id="macros-results">
+                        <h2 class="results-title">نتيجة حساب توزيع العناصر الغذائية</h2>
+                        <div class="results-content">
+                            <div class="result-card">
+                                <div class="result-icon">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="result-value" id="calories-value">0</div>
+                                <div class="result-label">السعرات الحرارية اليومية</div>
+                                <div class="result-description">إجمالي السعرات الحرارية اليومية المطلوبة لتحقيق هدفك.</div>
+                            </div>
+
+                            <div class="macros-chart-container">
+                                <canvas id="macros-chart"></canvas>
+                            </div>
+
+                            <div class="macros-details">
+                                <div class="macro-item protein">
+                                    <div class="macro-icon">
+                                        <i class="fas fa-drumstick-bite"></i>
+                                    </div>
+                                    <div class="macro-info">
+                                        <div class="macro-name">بروتين</div>
+                                        <div class="macro-value">
+                                            <span id="protein-value">0</span> جرام
+                                            (<span id="protein-calories">0</span> سعرة)
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="macro-item carbs">
+                                    <div class="macro-icon">
+                                        <i class="fas fa-bread-slice"></i>
+                                    </div>
+                                    <div class="macro-info">
+                                        <div class="macro-name">كربوهيدرات</div>
+                                        <div class="macro-value">
+                                            <span id="carbs-value">0</span> جرام
+                                            (<span id="carbs-calories">0</span> سعرة)
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="macro-item fat">
+                                    <div class="macro-icon">
+                                        <i class="fas fa-oil-can"></i>
+                                    </div>
+                                    <div class="macro-info">
+                                        <div class="macro-name">دهون</div>
+                                        <div class="macro-value">
+                                            <span id="fat-value">0</span> جرام
+                                            (<span id="fat-calories">0</span> سعرة)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="results-note">
+                            <p><strong>ما هي العناصر الغذائية الكبرى (Macros)؟</strong> العناصر الغذائية الكبرى هي البروتين والكربوهيدرات والدهون، وهي المصادر الرئيسية للسعرات الحرارية في النظام الغذائي.</p>
+                            <ul>
+                                <li><strong>البروتين (4 سعرات/جرام):</strong> ضروري لبناء وإصلاح العضلات والأنسجة.</li>
+                                <li><strong>الكربوهيدرات (4 سعرات/جرام):</strong> المصدر الرئيسي للطاقة للجسم والدماغ.</li>
+                                <li><strong>الدهون (9 سعرات/جرام):</strong> ضرورية لامتصاص الفيتامينات وإنتاج الهرمونات.</li>
+                            </ul>
+                            <p><strong>ملاحظة:</strong> يختلف توزيع هذه العناصر حسب أهدافك (إنقاص الوزن، الحفاظ على الوزن، زيادة الوزن) ونمط حياتك ومستوى نشاطك.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <i class="fas fa-apple-alt"></i>
+                        <span>تغذية ولياقة</span>
+                    </div>
+                    <p>موقعك الشامل للتغذية والتدريب في الجيم. نقدم لك أفضل النصائح والأدوات لتحقيق أهدافك في اللياقة البدنية.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="calories.html">حساب السعرات</a></li>
+                        <li><a href="meal-plan.html">خطة الوجبات</a></li>
+                        <li><a href="workout-schedule.html">جدول التمارين</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">قواعد البيانات</h3>
+                    <ul class="footer-links">
+                        <li><a href="food-database.html">قاعدة بيانات الأكلات</a></li>
+                        <li><a href="food-database.html?category=carbs">النشويات</a></li>
+                        <li><a href="food-database.html?category=vegetables">الخضروات</a></li>
+                        <li><a href="food-database.html?category=fruits">الفواكه</a></li>
+                        <li><a href="exercise-database.html">قاعدة بيانات التمارين</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">نصائح وإرشادات</h3>
+                    <ul class="footer-links">
+                        <li><a href="tips.html?category=nutrition">نصائح التغذية</a></li>
+                        <li><a href="tips.html?category=training">نصائح التدريب</a></li>
+                        <li><a href="tips.html?category=lifestyle">نصائح نمط الحياة</a></li>
+                        <li><a href="tips.html">جميع النصائح</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    جميع الحقوق محفوظة &copy; <span id="year"></span>  تغذية ولياقة | تم التصميم بـ M.A
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/mobile-menu-fix-v2.js"></script>
+    <script src="../js/calories.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+</body>
+</html>

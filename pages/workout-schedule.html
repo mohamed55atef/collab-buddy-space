@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="جدول التمارين الرياضية - موقع تغذية ولياقة">
+    <title>جدول التمارين | تغذية ولياقة</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/workout-schedule.css">
+    <link rel="stylesheet" href="../css/mobile-menu-fix.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <i class="fas fa-dumbbell"></i>
+                        <i class="fas fa-apple-alt"></i>
+                        <span>Everyday Fitness</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="../index.html" class="nav-link">الرئيسية</a></li>
+                        <li class="nav-item"><a href="calories.html" class="nav-link">حساب السعرات</a></li>
+                        <li class="nav-item"><a href="meal-plan.html" class="nav-link">خطة الوجبات</a></li>
+                        <li class="nav-item"><a href="food-database.html" class="nav-link">قاعدة بيانات الأكلات</a></li>
+                        <li class="nav-item"><a href="workout-schedule.html" class="nav-link active">جدول التمارين</a></li>
+                        <li class="nav-item"><a href="exercise-database.html" class="nav-link">قاعدة بيانات التمارين</a></li>
+                        <li class="nav-item"><a href="tips.html" class="nav-link">نصائح</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">من نحن</a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="theme-switcher">
+                    <button id="theme-toggle" class="btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title">جدول التمارين</h1>
+                <p class="page-subtitle">قم بإنشاء وتخصيص جدول تمارين أسبوعي يناسب أهدافك وجدولك الزمني</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="workout-schedule-section">
+                <!-- Workout Goals -->
+                <div class="workout-goals">
+                    <h2 class="section-title">أهداف التمرين</h2>
+                    <div class="goals-container">
+                        <div class="goal-card" data-goal="strength">
+                            <div class="goal-icon">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <h3 class="goal-title">بناء العضلات</h3>
+                            <p class="goal-description">تمارين تركز على زيادة حجم وقوة العضلات</p>
+                        </div>
+                        <div class="goal-card" data-goal="weight-loss">
+                            <div class="goal-icon">
+                                <i class="fas fa-weight"></i>
+                            </div>
+                            <h3 class="goal-title">فقدان الوزن</h3>
+                            <p class="goal-description">تمارين تركز على حرق الدهون وفقدان الوزن</p>
+                        </div>
+                        <div class="goal-card" data-goal="endurance">
+                            <div class="goal-icon">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <h3 class="goal-title">تحسين اللياقة</h3>
+                            <p class="goal-description">تمارين تركز على زيادة التحمل واللياقة القلبية</p>
+                        </div>
+                        <div class="goal-card" data-goal="flexibility">
+                            <div class="goal-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <h3 class="goal-title">زيادة المرونة</h3>
+                            <p class="goal-description">تمارين تركز على تحسين المرونة والتوازن</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workout Settings -->
+                <div class="workout-settings">
+                    <h2 class="section-title">إعدادات الجدول</h2>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label for="experience-level">مستوى الخبرة:</label>
+                            <select id="experience-level" class="form-control">
+                                <option value="beginner">مبتدئ</option>
+                                <option value="intermediate">متوسط</option>
+                                <option value="advanced">متقدم</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="days-per-week">عدد أيام التمرين في الأسبوع:</label>
+                            <select id="days-per-week" class="form-control">
+                                <option value="3">3 أيام</option>
+                                <option value="4">4 أيام</option>
+                                <option value="5">5 أيام</option>
+                                <option value="6">6 أيام</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="workout-duration">مدة التمرين:</label>
+                            <select id="workout-duration" class="form-control">
+                                <option value="30">30 دقيقة</option>
+                                <option value="45">45 دقيقة</option>
+                                <option value="60">60 دقيقة</option>
+                                <option value="90">90 دقيقة</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>المعدات المتاحة:</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="equipment-barbell" name="equipment" value="barbell">
+                                    <label for="equipment-barbell">بار حديد</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="equipment-dumbbell" name="equipment" value="dumbbell" checked>
+                                    <label for="equipment-dumbbell">دمبل</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="equipment-machine" name="equipment" value="machine">
+                                    <label for="equipment-machine">ماكينات</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="equipment-cable" name="equipment" value="cable">
+                                    <label for="equipment-cable">كيبل</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="equipment-bodyweight" name="equipment" value="bodyweight" checked>
+                                    <label for="equipment-bodyweight">وزن الجسم</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button id="generate-schedule-btn" class="btn btn-primary">
+                                <i class="fas fa-dumbbell"></i> إنشاء جدول التمارين
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workout Schedule -->
+                <div class="workout-schedule" id="workout-schedule">
+                    <h2 class="section-title">جدول التمارين الأسبوعي</h2>
+
+                    <div class="schedule-header">
+                        <div class="schedule-info">
+                            <div class="schedule-goal">
+                                <span class="info-label">الهدف:</span>
+                                <span class="info-value" id="schedule-goal-value">-</span>
+                            </div>
+                            <div class="schedule-level">
+                                <span class="info-label">المستوى:</span>
+                                <span class="info-value" id="schedule-level-value">-</span>
+                            </div>
+                            <div class="schedule-days">
+                                <span class="info-label">عدد الأيام:</span>
+                                <span class="info-value" id="schedule-days-value">-</span>
+                            </div>
+                        </div>
+                        <div class="schedule-actions">
+                            <button id="edit-schedule-btn" class="btn btn-secondary">
+                                <i class="fas fa-edit"></i> تعديل
+                            </button>
+                            <button id="save-schedule-btn" class="btn btn-primary">
+                                <i class="fas fa-save"></i> حفظ
+                            </button>
+                            <button id="print-schedule-btn" class="btn btn-secondary">
+                                <i class="fas fa-print"></i> طباعة
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="workout-days" id="workout-days">
+                        <!-- سيتم إضافة أيام التمرين هنا بواسطة JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Exercise Modal -->
+                <div class="modal" id="exercise-modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title">إضافة تمرين</h2>
+                            <button class="modal-close" id="modal-close">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="search-filter-container">
+                                <div class="search-box">
+                                    <input type="text" id="exercise-search" placeholder="ابحث عن تمرين...">
+                                    <button id="search-btn" class="btn btn-primary">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                <div class="filter-box">
+                                    <div class="filter-group">
+                                        <label for="muscle-filter">تصفية حسب العضلة:</label>
+                                        <select id="muscle-filter">
+                                            <option value="all">جميع العضلات</option>
+                                            <option value="chest">الصدر</option>
+                                            <option value="back">الظهر</option>
+                                            <option value="shoulders">الأكتاف</option>
+                                            <option value="biceps">البايسبس</option>
+                                            <option value="triceps">الترايسبس</option>
+                                            <option value="legs">الأرجل</option>
+                                            <option value="abs">البطن</option>
+                                            <option value="cardio">القلب</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="exercise-list" id="exercise-list">
+                                <!-- سيتم إضافة التمارين هنا بواسطة JavaScript -->
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" id="modal-close-btn">إغلاق</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <i class="fas fa-apple-alt"></i>
+                        <span>تغذية ولياقة</span>
+                    </div>
+                    <p>موقعك الشامل للتغذية والتدريب في الجيم. نقدم لك أفضل النصائح والأدوات لتحقيق أهدافك في اللياقة البدنية.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="calories.html">حساب السعرات</a></li>
+                        <li><a href="meal-plan.html">خطة الوجبات</a></li>
+                        <li><a href="workout-schedule.html">جدول التمارين</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">قواعد البيانات</h3>
+                    <ul class="footer-links">
+                        <li><a href="food-database.html">قاعدة بيانات الأكلات</a></li>
+                        <li><a href="food-database.html?category=carbs">النشويات</a></li>
+                        <li><a href="food-database.html?category=vegetables">الخضروات</a></li>
+                        <li><a href="food-database.html?category=fruits">الفواكه</a></li>
+                        <li><a href="exercise-database.html">قاعدة بيانات التمارين</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">نصائح وإرشادات</h3>
+                    <ul class="footer-links">
+                        <li><a href="tips.html?category=nutrition">نصائح التغذية</a></li>
+                        <li><a href="tips.html?category=training">نصائح التدريب</a></li>
+                        <li><a href="tips.html?category=lifestyle">نصائح نمط الحياة</a></li>
+                        <li><a href="tips.html">جميع النصائح</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    جميع الحقوق محفوظة &copy; <span id="year"></span>  تغذية ولياقة | تم التصميم بـ M.A
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/mobile-menu-fix-v2.js"></script>
+
+    <!-- ملفات بيانات التمارين -->
+    <script src="../js/workout-schedule/data/chest-exercises.js"></script>
+    <script src="../js/workout-schedule/data/back-exercises.js"></script>
+    <script src="../js/workout-schedule/data/shoulders-exercises.js"></script>
+    <script src="../js/workout-schedule/data/biceps-exercises.js"></script>
+    <script src="../js/workout-schedule/data/triceps-exercises.js"></script>
+    <script src="../js/workout-schedule/data/legs-exercises.js"></script>
+    <script src="../js/workout-schedule/data/abs-exercises.js"></script>
+    <script src="../js/workout-schedule/data/cardio-exercises.js"></script>
+    <script src="../js/workout-schedule/data/exercise-data-loader.js"></script>
+
+    <!-- المرحلة الأولى: البيانات والتحميل -->
+    <script src="../js/workout-schedule/phase1/data-loader.js"></script>
+    <script src="../js/workout-schedule/phase1/exercise-filter.js"></script>
+    <script src="../js/workout-schedule/phase1/schedule-creator.js"></script>
+    <script src="../js/workout-schedule/phase1/storage-manager.js"></script>
+    <script src="../js/workout-schedule/phase1/utils.js"></script>
+
+    <!-- المرحلة الثانية: واجهة المستخدم -->
+    <script src="../js/workout-schedule/phase2/ui-renderer.js"></script>
+    <script src="../js/workout-schedule/phase2/modal-manager.js"></script>
+    <script src="../js/workout-schedule/phase2/form-handler.js"></script>
+    <script src="../js/workout-schedule/phase2/notification-manager.js"></script>
+    <script src="../js/workout-schedule/phase2/animation-manager.js"></script>
+
+    <!-- المرحلة الثالثة: التفاعلات والأحداث -->
+    <script src="../js/workout-schedule/phase3/event-listeners.js"></script>
+    <script src="../js/workout-schedule/phase3/exercise-manager.js"></script>
+    <script src="../js/workout-schedule/phase3/schedule-editor.js"></script>
+    <script src="../js/workout-schedule/phase3/print-manager.js"></script>
+    <script src="../js/workout-schedule/phase3/app-initializer.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+</body>
+</html>

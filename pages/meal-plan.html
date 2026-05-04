@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="خطة الوجبات الأسبوعية - موقع تغذية ولياقة">
+    <title>خطة الوجبات | تغذية ولياقة</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/meal-plan.css">
+    <link rel="stylesheet" href="../css/mobile-menu-fix.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <i class="fas fa-dumbbell"></i>
+                        <i class="fas fa-apple-alt"></i>
+                        <span>Everyday Fitness</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="../index.html" class="nav-link">الرئيسية</a></li>
+                        <li class="nav-item"><a href="calories.html" class="nav-link">حساب السعرات</a></li>
+                        <li class="nav-item"><a href="meal-plan.html" class="nav-link active">خطة الوجبات</a></li>
+                        <li class="nav-item"><a href="food-database.html" class="nav-link">قاعدة بيانات الأكلات</a></li>
+                        <li class="nav-item"><a href="workout-schedule.html" class="nav-link">جدول التمارين</a></li>
+                        <li class="nav-item"><a href="exercise-database.html" class="nav-link">قاعدة بيانات التمارين</a></li>
+                        <li class="nav-item"><a href="tips.html" class="nav-link">نصائح</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">من نحن</a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="theme-switcher">
+                    <button id="theme-toggle" class="btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title">خطة الوجبات الأسبوعية</h1>
+                <p class="page-subtitle">صمم خطة غذائية أسبوعية متكاملة تناسب احتياجاتك وتفضيلاتك</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="meal-plan-section">
+                <div class="meal-plan-tabs">
+                    <button class="tab-btn active" data-tab="create">إنشاء خطة جديدة</button>
+                    <button class="tab-btn" data-tab="view">عرض الخطة الحالية</button>
+                    <button class="tab-btn" data-tab="templates">قوالب جاهزة</button>
+                </div>
+
+                <!-- Create Meal Plan Tab -->
+                <div class="tab-content active" id="create-tab">
+                    <div class="meal-plan-form">
+                        <h2 class="form-title">إنشاء خطة وجبات جديدة</h2>
+                        <p class="form-description">أدخل بياناتك وتفضيلاتك لإنشاء خطة وجبات أسبوعية متكاملة</p>
+
+                        <form id="meal-plan-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="calories-goal">هدف السعرات اليومية</label>
+                                    <input type="number" id="calories-goal" name="calories-goal" min="1200" max="5000" placeholder="أدخل هدف السعرات اليومية" required>
+                                    <small class="form-hint">يمكنك استخدام <a href="calories.html">حاسبة السعرات</a> لتحديد احتياجاتك</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="meals-count">عدد الوجبات اليومية</label>
+                                    <select id="meals-count" name="meals-count" required>
+                                        <option value="" disabled selected>اختر عدد الوجبات</option>
+                                        <option value="3">3 وجبات</option>
+                                        <option value="4">4 وجبات</option>
+                                        <option value="5">5 وجبات</option>
+                                        <option value="6">6 وجبات</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>تفضيلات الطعام</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="food-preference" value="egyptian" checked>
+                                        <span class="checkbox-text">أكلات مصرية</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="food-preference" value="fast-food">
+                                        <span class="checkbox-text">وجبات سريعة</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="food-preference" value="desserts">
+                                        <span class="checkbox-text">حلويات</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="food-preference" value="drinks">
+                                        <span class="checkbox-text">مشروبات</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="food-preference" value="carbs">
+                                        <span class="checkbox-text">نشويات</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="food-preference" value="proteins">
+                                        <span class="checkbox-text">بروتينات</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="food-preference" value="vegetables">
+                                        <span class="checkbox-text">خضروات</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="food-preference" value="fruits">
+                                        <span class="checkbox-text">فواكه</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>القيود الغذائية</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="dietary-restriction" value="vegetarian">
+                                        <span class="checkbox-text">نباتي</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="dietary-restriction" value="low-carb">
+                                        <span class="checkbox-text">قليل الكربوهيدرات</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="dietary-restriction" value="high-protein">
+                                        <span class="checkbox-text">عالي البروتين</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="dietary-restriction" value="low-fat">
+                                        <span class="checkbox-text">قليل الدهون</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="plan-duration">مدة الخطة</label>
+                                <select id="plan-duration" name="plan-duration" required>
+                                    <option value="" disabled selected>اختر مدة الخطة</option>
+                                    <option value="1">أسبوع واحد</option>
+                                    <option value="2">أسبوعان</option>
+                                    <option value="4">شهر</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-utensils"></i> إنشاء خطة الوجبات
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="fas fa-redo"></i> إعادة تعيين
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- View Meal Plan Tab -->
+                <div class="tab-content" id="view-tab">
+                    <div id="current-meal-plan">
+                        <div class="no-plan-message">
+                            <i class="fas fa-utensils"></i>
+                            <h3>لا توجد خطة وجبات حالية</h3>
+                            <p>قم بإنشاء خطة وجبات جديدة أو اختر من القوالب الجاهزة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Templates Tab -->
+                <div class="tab-content" id="templates-tab">
+                    <div class="templates-grid">
+                        <div class="template-card">
+                            <div class="template-header">
+                                <h3 class="template-title">خطة لفقدان الوزن</h3>
+                                <span class="template-calories">1500 سعرة حرارية</span>
+                            </div>
+                            <div class="template-description">
+                                <p>خطة غذائية منخفضة السعرات الحرارية لفقدان الوزن بشكل صحي وآمن.</p>
+                            </div>
+                            <div class="template-features">
+                                <span class="feature"><i class="fas fa-check"></i> 4 وجبات يومية</span>
+                                <span class="feature"><i class="fas fa-check"></i> غنية بالبروتين</span>
+                                <span class="feature"><i class="fas fa-check"></i> قليلة الكربوهيدرات</span>
+                            </div>
+                            <div class="template-actions">
+                                <button class="btn btn-primary load-template" data-template="weight-loss">
+                                    <i class="fas fa-download"></i> تحميل الخطة
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="template-card">
+                            <div class="template-header">
+                                <h3 class="template-title">خطة لزيادة الوزن</h3>
+                                <span class="template-calories">3000 سعرة حرارية</span>
+                            </div>
+                            <div class="template-description">
+                                <p>خطة غذائية عالية السعرات الحرارية لزيادة الوزن وبناء العضلات.</p>
+                            </div>
+                            <div class="template-features">
+                                <span class="feature"><i class="fas fa-check"></i> 6 وجبات يومية</span>
+                                <span class="feature"><i class="fas fa-check"></i> غنية بالبروتين</span>
+                                <span class="feature"><i class="fas fa-check"></i> عالية الكربوهيدرات</span>
+                            </div>
+                            <div class="template-actions">
+                                <button class="btn btn-primary load-template" data-template="weight-gain">
+                                    <i class="fas fa-download"></i> تحميل الخطة
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="template-card">
+                            <div class="template-header">
+                                <h3 class="template-title">خطة متوازنة</h3>
+                                <span class="template-calories">2200 سعرة حرارية</span>
+                            </div>
+                            <div class="template-description">
+                                <p>خطة غذائية متوازنة للحفاظ على الوزن وتحسين الصحة العامة.</p>
+                            </div>
+                            <div class="template-features">
+                                <span class="feature"><i class="fas fa-check"></i> 5 وجبات يومية</span>
+                                <span class="feature"><i class="fas fa-check"></i> متوازنة العناصر الغذائية</span>
+                                <span class="feature"><i class="fas fa-check"></i> غنية بالألياف</span>
+                            </div>
+                            <div class="template-actions">
+                                <button class="btn btn-primary load-template" data-template="balanced">
+                                    <i class="fas fa-download"></i> تحميل الخطة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Replacement Modal -->
+    <div id="replacement-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h3>اختر أكلة بديلة</h3>
+            <div class="modal-search">
+                <input type="text" id="modal-search-input" placeholder="ابحث عن أكلة...">
+            </div>
+            <div id="modal-food-list" class="modal-food-list">
+                <!-- Food items will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <i class="fas fa-apple-alt"></i>
+                        <span>تغذية ولياقة</span>
+                    </div>
+                    <p>موقعك الشامل للتغذية والتدريب في الجيم. نقدم لك أفضل النصائح والأدوات لتحقيق أهدافك في اللياقة البدنية.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="calories.html">حساب السعرات</a></li>
+                        <li><a href="meal-plan.html">خطة الوجبات</a></li>
+                        <li><a href="workout-schedule.html">جدول التمارين</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">قواعد البيانات</h3>
+                    <ul class="footer-links">
+                        <li><a href="food-database.html">قاعدة بيانات الأكلات</a></li>
+                        <li><a href="food-database.html?category=carbs">النشويات</a></li>
+                        <li><a href="food-database.html?category=vegetables">الخضروات</a></li>
+                        <li><a href="food-database.html?category=fruits">الفواكه</a></li>
+                        <li><a href="exercise-database.html">قاعدة بيانات التمارين</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">نصائح وإرشادات</h3>
+                    <ul class="footer-links">
+                        <li><a href="tips.html?category=nutrition">نصائح التغذية</a></li>
+                        <li><a href="tips.html?category=training">نصائح التدريب</a></li>
+                        <li><a href="tips.html?category=lifestyle">نصائح نمط الحياة</a></li>
+                        <li><a href="tips.html">جميع النصائح</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    جميع الحقوق محفوظة &copy; <span id="year"></span>  تغذية ولياقة | تم التصميم بـ M.A
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/mobile-menu-fix-v2.js"></script>
+
+    <!-- Food Data -->
+    <script src="../data/egyptian-food-1.js"></script>
+    <script src="../data/fast-food-1.js"></script>
+    <script src="../data/desserts-1.js"></script>
+    <script src="../data/drinks-1.js"></script>
+    <script src="../data/carbs-1.js"></script>
+    <script src="../data/proteins-1.js"></script>
+    <script src="../data/vegetables-1.js"></script>
+    <script src="../data/fruits-1.js"></script>
+
+    <script src="../js/meal-plan.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+</body>
+</html>

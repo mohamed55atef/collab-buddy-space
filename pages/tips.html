@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="نصائح التغذية والتدريب ونمط الحياة - موقع تغذية ولياقة">
+    <title>نصائح | تغذية ولياقة</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/tips.css">
+    <link rel="stylesheet" href="../css/mobile-menu-fix.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <!-- ملفات قاعدة البيانات -->
+    <script src="../data/tips.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <i class="fas fa-dumbbell"></i>
+                        <i class="fas fa-apple-alt"></i>
+                        <span>Everyday Fitness</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="../index.html" class="nav-link">الرئيسية</a></li>
+                        <li class="nav-item"><a href="calories.html" class="nav-link">حساب السعرات</a></li>
+                        <li class="nav-item"><a href="meal-plan.html" class="nav-link">خطة الوجبات</a></li>
+                        <li class="nav-item"><a href="food-database.html" class="nav-link">قاعدة بيانات الأكلات</a></li>
+                        <li class="nav-item"><a href="workout-schedule.html" class="nav-link">جدول التمارين</a></li>
+                        <li class="nav-item"><a href="exercise-database.html" class="nav-link">قاعدة بيانات التمارين</a></li>
+                        <li class="nav-item"><a href="tips.html" class="nav-link active">نصائح</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">من نحن</a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="theme-switcher">
+                    <button id="theme-toggle" class="btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title">نصائح وإرشادات</h1>
+                <p class="page-subtitle">نصائح قيمة في التغذية والتدريب ونمط الحياة لمساعدتك في تحقيق أهدافك</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="tips-section">
+                <!-- Categories Filter -->
+                <div class="categories-filter">
+                    <h2 class="section-title">تصفية حسب الفئة</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all">جميع النصائح</button>
+                        <button class="filter-btn" data-category="nutrition">نصائح التغذية</button>
+                        <button class="filter-btn" data-category="training">نصائح التدريب</button>
+                        <button class="filter-btn" data-category="lifestyle">نصائح نمط الحياة</button>
+                    </div>
+                </div>
+
+                <!-- Search Box -->
+                <div class="search-box">
+                    <input type="text" id="tips-search" placeholder="ابحث عن نصائح...">
+                    <button id="search-btn" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <!-- Tips Container -->
+                <div class="tips-container" id="tips-container">
+                    <!-- سيتم إضافة النصائح هنا بواسطة JavaScript -->
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>جاري تحميل النصائح...</p>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <!-- سيتم إضافة أزرار الصفحات هنا بواسطة JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Tip Modal -->
+    <div class="modal" id="tip-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">عنوان النصيحة</h2>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <div class="modal-meta">
+                    <div class="tip-category">
+                        <i class="fas fa-tag"></i>
+                        <span id="modal-category"></span>
+                    </div>
+                    <div class="tip-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span id="modal-date"></span>
+                    </div>
+                </div>
+                <!-- سيتم إضافة محتوى النصيحة هنا بواسطة JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <div class="tip-tags" id="modal-tags">
+                    <!-- سيتم إضافة الوسوم هنا بواسطة JavaScript -->
+                </div>
+                <button class="btn btn-secondary" id="modal-close-btn">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <i class="fas fa-apple-alt"></i>
+                        <span>تغذية ولياقة</span>
+                    </div>
+                    <p>موقعك الشامل للتغذية والتدريب في الجيم. نقدم لك أفضل النصائح والأدوات لتحقيق أهدافك في اللياقة البدنية.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="calories.html">حساب السعرات</a></li>
+                        <li><a href="meal-plan.html">خطة الوجبات</a></li>
+                        <li><a href="workout-schedule.html">جدول التمارين</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">قواعد البيانات</h3>
+                    <ul class="footer-links">
+                        <li><a href="food-database.html">قاعدة بيانات الأكلات</a></li>
+                        <li><a href="food-database.html?category=carbs">النشويات</a></li>
+                        <li><a href="food-database.html?category=vegetables">الخضروات</a></li>
+                        <li><a href="food-database.html?category=fruits">الفواكه</a></li>
+                        <li><a href="exercise-database.html">قاعدة بيانات التمارين</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">نصائح وإرشادات</h3>
+                    <ul class="footer-links">
+                        <li><a href="tips.html?category=nutrition">نصائح التغذية</a></li>
+                        <li><a href="tips.html?category=training">نصائح التدريب</a></li>
+                        <li><a href="tips.html?category=lifestyle">نصائح نمط الحياة</a></li>
+                        <li><a href="tips.html">جميع النصائح</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    جميع الحقوق محفوظة &copy; <span id="year"></span>  تغذية ولياقة | تم التصميم بـ M.A
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/mobile-menu-fix-v2.js"></script>
+    <script src="../js/tips.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+</body>
+</html>

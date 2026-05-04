@@ -1,0 +1,58 @@
+                <!-- Workout Settings -->
+                <div class="workout-settings">
+                    <h2 class="section-title">إعدادات الجدول</h2>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label for="experience-level">مستوى الخبرة:</label>
+                            <select id="experience-level" class="form-control">
+                                <option value="beginner">مبتدئ</option>
+                                <option value="intermediate">متوسط</option>
+                                <option value="advanced">متقدم</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="days-per-week">عدد أيام التمرين في الأسبوع:</label>
+                            <select id="days-per-week" class="form-control">
+                                <option value="3">3 أيام</option>
+                                <option value="4">4 أيام</option>
+                                <option value="5">5 أيام</option>
+                                <option value="6">6 أيام</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="workout-duration">مدة التمرين:</label>
+                            <select id="workout-duration" class="form-control">
+                                <option value="30">30 دقيقة</option>
+                                <option value="45">45 دقيقة</option>
+                                <option value="60">60 دقيقة</option>
+                                <option value="90">90 دقيقة</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="equipment-available">المعدات المتاحة:</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="equipment-gym" name="equipment" value="gym" checked>
+                                    <label for="equipment-gym">صالة رياضية كاملة</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="equipment-dumbbells" name="equipment" value="dumbbells">
+                                    <label for="equipment-dumbbells">دمبل فقط</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="equipment-bodyweight" name="equipment" value="bodyweight">
+                                    <label for="equipment-bodyweight">وزن الجسم فقط</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="equipment-resistance-bands" name="equipment" value="resistance-bands">
+                                    <label for="equipment-resistance-bands">مطاط مقاومة</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button id="generate-plan-btn" class="btn btn-primary">
+                                <i class="fas fa-dumbbell"></i> إنشاء جدول التمارين
+                            </button>
+                        </div>
+                    </div>
+                </div>

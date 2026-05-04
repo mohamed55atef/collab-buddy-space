@@ -1,0 +1,50 @@
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title">قاعدة بيانات الأكلات</h1>
+                <p class="page-subtitle">تصفح قاعدة بيانات شاملة للأكلات المصرية والعالمية مع القيم الغذائية</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="food-database-section">
+                <!-- Search and Filter -->
+                <div class="search-filter-container">
+                    <div class="search-box">
+                        <input type="text" id="food-search" placeholder="ابحث عن طعام...">
+                        <button id="search-btn" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="filter-box">
+                        <div class="filter-group">
+                            <label for="category-filter">تصفية حسب الفئة:</label>
+                            <select id="category-filter">
+                                <option value="all">جميع الفئات</option>
+                                <option value="carbs">النشويات</option>
+                                <option value="proteins">البروتينات</option>
+                                <option value="vegetables">الخضروات</option>
+                                <option value="fruits">الفواكه</option>
+                                <option value="egyptian">الأكلات المصرية</option>
+                                <option value="fast-food">الوجبات السريعة</option>
+                                <option value="desserts">الحلويات</option>
+                                <option value="drinks">المشروبات</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sort-by">ترتيب حسب:</label>
+                            <select id="sort-by">
+                                <option value="name">الاسم</option>
+                                <option value="calories-asc">السعرات (تصاعدي)</option>
+                                <option value="calories-desc">السعرات (تنازلي)</option>
+                                <option value="protein-desc">البروتين (تنازلي)</option>
+                                <option value="carbs-desc">الكربوهيدرات (تنازلي)</option>
+                                <option value="fat-desc">الدهون (تنازلي)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>

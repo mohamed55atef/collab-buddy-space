@@ -1,0 +1,45 @@
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title">خطة الوجبات الأسبوعية</h1>
+                <p class="page-subtitle">صمم خطة غذائية أسبوعية متكاملة تناسب احتياجاتك وتفضيلاتك</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="meal-plan-section">
+                <div class="meal-plan-tabs">
+                    <button class="tab-btn active" data-tab="create">إنشاء خطة جديدة</button>
+                    <button class="tab-btn" data-tab="view">عرض الخطة الحالية</button>
+                    <button class="tab-btn" data-tab="templates">قوالب جاهزة</button>
+                </div>
+                
+                <!-- Create Meal Plan Tab -->
+                <div class="tab-content active" id="create-tab">
+                    <div class="meal-plan-form">
+                        <h2 class="form-title">إنشاء خطة وجبات جديدة</h2>
+                        <p class="form-description">أدخل بياناتك وتفضيلاتك لإنشاء خطة وجبات أسبوعية متكاملة</p>
+                        
+                        <form id="meal-plan-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="calories-goal">هدف السعرات اليومية</label>
+                                    <input type="number" id="calories-goal" name="calories-goal" min="1200" max="5000" placeholder="أدخل هدف السعرات اليومية" required>
+                                    <small class="form-hint">يمكنك استخدام <a href="calories.html">حاسبة السعرات</a> لتحديد احتياجاتك</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="meals-count">عدد الوجبات اليومية</label>
+                                    <select id="meals-count" name="meals-count" required>
+                                        <option value="" disabled selected>اختر عدد الوجبات</option>
+                                        <option value="3">3 وجبات</option>
+                                        <option value="4">4 وجبات</option>
+                                        <option value="5">5 وجبات</option>
+                                        <option value="6">6 وجبات</option>
+                                    </select>
+                                </div>
+                            </div>

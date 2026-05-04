@@ -1,0 +1,60 @@
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="tips-section">
+                <!-- Categories Filter -->
+                <div class="categories-filter">
+                    <h2 class="section-title">تصفية حسب الفئة</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all">جميع النصائح</button>
+                        <button class="filter-btn" data-category="nutrition">نصائح التغذية</button>
+                        <button class="filter-btn" data-category="training">نصائح التدريب</button>
+                        <button class="filter-btn" data-category="lifestyle">نصائح نمط الحياة</button>
+                    </div>
+                </div>
+                
+                <!-- Search Box -->
+                <div class="search-box">
+                    <input type="text" id="tips-search" placeholder="ابحث عن نصائح...">
+                    <button id="search-btn" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <!-- Tips Container -->
+                <div class="tips-container" id="tips-container">
+                    <!-- سيتم إضافة النصائح هنا بواسطة JavaScript -->
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>جاري تحميل النصائح...</p>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <!-- سيتم إضافة أزرار الصفحات هنا بواسطة JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Tip Modal -->
+    <div class="modal" id="tip-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">عنوان النصيحة</h2>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- سيتم إضافة محتوى النصيحة هنا بواسطة JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <div class="tip-tags" id="modal-tags">
+                    <!-- سيتم إضافة الوسوم هنا بواسطة JavaScript -->
+                </div>
+                <button class="btn btn-secondary" id="modal-close-btn">إغلاق</button>
+            </div>
+        </div>
+    </div>

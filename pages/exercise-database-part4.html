@@ -1,0 +1,148 @@
+                <!-- Exercise Items -->
+                <div class="exercise-items-container">
+                    <div class="exercise-items-header">
+                        <h2 class="section-title">قائمة التمارين</h2>
+                        <div class="items-count">
+                            <span id="items-count">0</span> تمرين
+                        </div>
+                    </div>
+                    
+                    <div class="exercise-items-grid" id="exercise-items-grid">
+                        <!-- سيتم إضافة عناصر التمارين هنا بواسطة JavaScript -->
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>جاري تحميل قاعدة البيانات...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="no-results" id="no-results" style="display: none;">
+                        <i class="fas fa-search"></i>
+                        <h3>لا توجد نتائج</h3>
+                        <p>لم يتم العثور على تمارين تطابق معايير البحث. يرجى تجربة كلمات بحث أخرى أو تغيير الفلاتر.</p>
+                    </div>
+                    
+                    <div class="pagination" id="pagination">
+                        <!-- سيتم إضافة أزرار الصفحات هنا بواسطة JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Exercise Details Modal -->
+                <div class="modal" id="exercise-details-modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-exercise-name">اسم التمرين</h2>
+                            <button class="modal-close" id="modal-close">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="exercise-details">
+                                <div class="exercise-video" id="modal-exercise-video">
+                                    <!-- فيديو التمرين -->
+                                </div>
+                                <div class="exercise-info">
+                                    <div class="exercise-details-info">
+                                        <div class="detail-item">
+                                            <span class="detail-label">العضلة المستهدفة:</span>
+                                            <span class="detail-value" id="modal-muscle">-</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">المعدات المستخدمة:</span>
+                                            <span class="detail-value" id="modal-equipment">-</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">مستوى الصعوبة:</span>
+                                            <span class="detail-value" id="modal-difficulty">-</span>
+                                        </div>
+                                    </div>
+                                    <div class="exercise-description" id="modal-description">
+                                        <!-- وصف التمرين -->
+                                    </div>
+                                    <div class="exercise-steps">
+                                        <h3>طريقة الأداء:</h3>
+                                        <ol id="modal-steps">
+                                            <!-- خطوات التمرين -->
+                                        </ol>
+                                    </div>
+                                    <div class="exercise-tips" id="modal-tips-container">
+                                        <h3>نصائح:</h3>
+                                        <ul id="modal-tips">
+                                            <!-- نصائح التمرين -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" id="modal-close-btn">إغلاق</button>
+                            <button class="btn btn-primary" id="modal-add-to-workout">
+                                <i class="fas fa-plus"></i> إضافة إلى التمرين
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <i class="fas fa-apple-alt"></i>
+                        <span>تغذية ولياقة</span>
+                    </div>
+                    <p>موقعك الشامل للتغذية والتدريب في الجيم. نقدم لك أفضل النصائح والأدوات لتحقيق أهدافك في اللياقة البدنية.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="calories.html">حساب السعرات</a></li>
+                        <li><a href="meal-plan.html">خطة الوجبات</a></li>
+                        <li><a href="workout-plan.html">جدول التمارين</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">قواعد البيانات</h3>
+                    <ul class="footer-links">
+                        <li><a href="food-database.html">قاعدة بيانات الأكلات</a></li>
+                        <li><a href="food-database.html?category=carbs">النشويات</a></li>
+                        <li><a href="food-database.html?category=vegetables">الخضروات</a></li>
+                        <li><a href="food-database.html?category=fruits">الفواكه</a></li>
+                        <li><a href="exercise-database.html">قاعدة بيانات التمارين</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">نصائح وإرشادات</h3>
+                    <ul class="footer-links">
+                        <li><a href="tips.html?category=nutrition">نصائح التغذية</a></li>
+                        <li><a href="tips.html?category=training">نصائح التدريب</a></li>
+                        <li><a href="tips.html?category=lifestyle">نصائح نمط الحياة</a></li>
+                        <li><a href="tips.html">جميع النصائح</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    جميع الحقوق محفوظة &copy; <span id="year"></span> تغذية ولياقة | تم التصميم بـ <i class="fas fa-heart"></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/exercise-database.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title">حساب السعرات الحرارية</h1>
+                <p class="page-subtitle">احسب احتياجاتك اليومية من السعرات الحرارية وكتلة الجسم المثالية</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="calculator-section">
+                <div class="calculator-tabs">
+                    <button class="tab-btn active" data-tab="calories">حساب السعرات الحرارية</button>
+                    <button class="tab-btn" data-tab="bmi">حساب مؤشر كتلة الجسم</button>
+                    <button class="tab-btn" data-tab="macros">توزيع العناصر الغذائية</button>
+                </div>
+                
+                <!-- Calories Calculator Tab -->
+                <div class="tab-content active" id="calories-tab">
+                    <div class="calculator-form">
+                        <h2 class="form-title">حساب السعرات الحرارية اليومية</h2>
+                        <p class="form-description">أدخل بياناتك لحساب احتياجاتك اليومية من السعرات الحرارية</p>
+                        
+                        <form id="calories-form">
+                            <div class="form-group">
+                                <label for="gender">الجنس</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="male" checked>
+                                        <span class="radio-text">ذكر</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="female">
+                                        <span class="radio-text">أنثى</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="age">العمر (سنة)</label>
+                                    <input type="number" id="age" name="age" min="15" max="80" placeholder="أدخل عمرك" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="height">الطول (سم)</label>
+                                    <input type="number" id="height" name="height" min="140" max="220" placeholder="أدخل طولك" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="weight">الوزن (كجم)</label>
+                                    <input type="number" id="weight" name="weight" min="40" max="200" placeholder="أدخل وزنك" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="activity">مستوى النشاط</label>
+                                    <select id="activity" name="activity" required>
+                                        <option value="" disabled selected>اختر مستوى نشاطك</option>
+                                        <option value="1.2">خامل (قليل أو معدوم النشاط)</option>
+                                        <option value="1.375">خفيف (تمارين خفيفة 1-3 أيام/أسبوع)</option>
+                                        <option value="1.55">متوسط (تمارين متوسطة 3-5 أيام/أسبوع)</option>
+                                        <option value="1.725">نشط (تمارين شاقة 6-7 أيام/أسبوع)</option>
+                                        <option value="1.9">نشط جداً (تمارين شاقة يومياً أو عمل بدني)</option>
+                                    </select>
+                                </div>
+                            </div>

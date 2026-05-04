@@ -1,0 +1,66 @@
+                            <div class="form-group">
+                                <label for="goal">الهدف</label>
+                                <select id="goal" name="goal" required>
+                                    <option value="" disabled selected>اختر هدفك</option>
+                                    <option value="lose">فقدان الوزن</option>
+                                    <option value="maintain">الحفاظ على الوزن</option>
+                                    <option value="gain">زيادة الوزن</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-calculator"></i> حساب السعرات
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="fas fa-redo"></i> إعادة تعيين
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="calculator-results" id="calories-results">
+                        <h2 class="results-title">نتائج حساب السعرات الحرارية</h2>
+                        <div class="results-content">
+                            <div class="result-card">
+                                <div class="result-icon">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="result-value" id="bmr-value">0</div>
+                                <div class="result-label">معدل الأيض الأساسي (BMR)</div>
+                                <div class="result-description">عدد السعرات الحرارية التي يحتاجها جسمك للحفاظ على وظائفه الأساسية في حالة الراحة التامة.</div>
+                            </div>
+                            
+                            <div class="result-card highlight">
+                                <div class="result-icon">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <div class="result-value" id="tdee-value">0</div>
+                                <div class="result-label">إجمالي السعرات اليومية (TDEE)</div>
+                                <div class="result-description">إجمالي السعرات الحرارية التي يحتاجها جسمك يومياً بناءً على مستوى نشاطك.</div>
+                            </div>
+                            
+                            <div class="result-card">
+                                <div class="result-icon">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <div class="result-value" id="goal-value">0</div>
+                                <div class="result-label">السعرات المطلوبة لتحقيق هدفك</div>
+                                <div class="result-description">عدد السعرات الحرارية اليومية المطلوبة لتحقيق هدفك من فقدان أو زيادة أو الحفاظ على الوزن.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="results-note">
+                            <p><strong>ملاحظة:</strong> هذه النتائج تقديرية وقد تختلف من شخص لآخر. يفضل استشارة أخصائي تغذية للحصول على خطة غذائية مخصصة.</p>
+                        </div>
+                        
+                        <div class="results-actions">
+                            <a href="meal-plan.html" class="btn btn-primary">
+                                <i class="fas fa-utensils"></i> إنشاء خطة وجبات
+                            </a>
+                            <button id="save-results" class="btn btn-secondary">
+                                <i class="fas fa-save"></i> حفظ النتائج
+                            </button>
+                        </div>
+                    </div>
+                </div>

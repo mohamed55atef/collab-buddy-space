@@ -1,0 +1,153 @@
+                <!-- Food Items -->
+                <div class="food-items-container">
+                    <div class="food-items-header">
+                        <h2 class="section-title">قائمة الأطعمة</h2>
+                        <div class="items-count">
+                            <span id="items-count">0</span> عنصر
+                        </div>
+                    </div>
+                    
+                    <div class="food-items-grid" id="food-items-grid">
+                        <!-- سيتم إضافة عناصر الطعام هنا بواسطة JavaScript -->
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>جاري تحميل قاعدة البيانات...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="no-results" id="no-results" style="display: none;">
+                        <i class="fas fa-search"></i>
+                        <h3>لا توجد نتائج</h3>
+                        <p>لم يتم العثور على أطعمة تطابق معايير البحث. يرجى تجربة كلمات بحث أخرى أو تغيير الفلاتر.</p>
+                    </div>
+                    
+                    <div class="pagination" id="pagination">
+                        <!-- سيتم إضافة أزرار الصفحات هنا بواسطة JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Food Details Modal -->
+                <div class="modal" id="food-details-modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modal-food-name">اسم الطعام</h2>
+                            <button class="modal-close" id="modal-close">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="food-details">
+                                <div class="food-image" id="modal-food-image">
+                                    <!-- صورة الطعام -->
+                                </div>
+                                <div class="food-info">
+                                    <div class="nutrition-facts">
+                                        <h3>القيم الغذائية</h3>
+                                        <div class="nutrition-grid">
+                                            <div class="nutrition-item">
+                                                <div class="nutrition-value" id="modal-calories">0</div>
+                                                <div class="nutrition-label">سعرات حرارية</div>
+                                            </div>
+                                            <div class="nutrition-item">
+                                                <div class="nutrition-value" id="modal-protein">0</div>
+                                                <div class="nutrition-label">بروتين (جرام)</div>
+                                            </div>
+                                            <div class="nutrition-item">
+                                                <div class="nutrition-value" id="modal-carbs">0</div>
+                                                <div class="nutrition-label">كربوهيدرات (جرام)</div>
+                                            </div>
+                                            <div class="nutrition-item">
+                                                <div class="nutrition-value" id="modal-fat">0</div>
+                                                <div class="nutrition-label">دهون (جرام)</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="food-details-info">
+                                        <div class="detail-item">
+                                            <span class="detail-label">الفئة:</span>
+                                            <span class="detail-value" id="modal-category">-</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">حجم الحصة:</span>
+                                            <span class="detail-value" id="modal-serving">-</span>
+                                        </div>
+                                    </div>
+                                    <div class="food-description" id="modal-description">
+                                        <!-- وصف الطعام -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" id="modal-close-btn">إغلاق</button>
+                            <button class="btn btn-primary" id="modal-add-to-meal">
+                                <i class="fas fa-plus"></i> إضافة إلى الوجبة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <i class="fas fa-apple-alt"></i>
+                        <span>تغذية ولياقة</span>
+                    </div>
+                    <p>موقعك الشامل للتغذية والتدريب في الجيم. نقدم لك أفضل النصائح والأدوات لتحقيق أهدافك في اللياقة البدنية.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="calories.html">حساب السعرات</a></li>
+                        <li><a href="meal-plan.html">خطة الوجبات</a></li>
+                        <li><a href="workout-plan.html">جدول التمارين</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">قواعد البيانات</h3>
+                    <ul class="footer-links">
+                        <li><a href="food-database.html">قاعدة بيانات الأكلات</a></li>
+                        <li><a href="food-database.html?category=carbs">النشويات</a></li>
+                        <li><a href="food-database.html?category=vegetables">الخضروات</a></li>
+                        <li><a href="food-database.html?category=fruits">الفواكه</a></li>
+                        <li><a href="exercise-database.html">قاعدة بيانات التمارين</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">نصائح وإرشادات</h3>
+                    <ul class="footer-links">
+                        <li><a href="tips.html?category=nutrition">نصائح التغذية</a></li>
+                        <li><a href="tips.html?category=training">نصائح التدريب</a></li>
+                        <li><a href="tips.html?category=lifestyle">نصائح نمط الحياة</a></li>
+                        <li><a href="tips.html">جميع النصائح</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    جميع الحقوق محفوظة &copy; <span id="year"></span> تغذية ولياقة | تم التصميم بـ <i class="fas fa-heart"></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/food-database.js"></script>
+</body>
+</html>
