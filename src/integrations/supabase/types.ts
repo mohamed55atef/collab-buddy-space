@@ -14,16 +14,282 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      clients: {
+        Row: {
+          age: number | null
+          coach_id: string
+          created_at: string
+          email: string | null
+          full_name: string
+          gender: string | null
+          goal: string | null
+          height_cm: number | null
+          id: string
+          notes: string | null
+          phone: string | null
+          status: string
+          updated_at: string
+          weight_kg: number | null
+        }
+        Insert: {
+          age?: number | null
+          coach_id: string
+          created_at?: string
+          email?: string | null
+          full_name: string
+          gender?: string | null
+          goal?: string | null
+          height_cm?: number | null
+          id?: string
+          notes?: string | null
+          phone?: string | null
+          status?: string
+          updated_at?: string
+          weight_kg?: number | null
+        }
+        Update: {
+          age?: number | null
+          coach_id?: string
+          created_at?: string
+          email?: string | null
+          full_name?: string
+          gender?: string | null
+          goal?: string | null
+          height_cm?: number | null
+          id?: string
+          notes?: string | null
+          phone?: string | null
+          status?: string
+          updated_at?: string
+          weight_kg?: number | null
+        }
+        Relationships: []
+      }
+      meal_plans: {
+        Row: {
+          carbs_g: number | null
+          client_id: string | null
+          coach_id: string
+          created_at: string
+          details: Json | null
+          end_date: string | null
+          fats_g: number | null
+          id: string
+          protein_g: number | null
+          start_date: string | null
+          title: string
+          total_calories: number | null
+          updated_at: string
+        }
+        Insert: {
+          carbs_g?: number | null
+          client_id?: string | null
+          coach_id: string
+          created_at?: string
+          details?: Json | null
+          end_date?: string | null
+          fats_g?: number | null
+          id?: string
+          protein_g?: number | null
+          start_date?: string | null
+          title: string
+          total_calories?: number | null
+          updated_at?: string
+        }
+        Update: {
+          carbs_g?: number | null
+          client_id?: string | null
+          coach_id?: string
+          created_at?: string
+          details?: Json | null
+          end_date?: string | null
+          fats_g?: number | null
+          id?: string
+          protein_g?: number | null
+          start_date?: string | null
+          title?: string
+          total_calories?: number | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "meal_plans_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      measurements: {
+        Row: {
+          arms_cm: number | null
+          body_fat_pct: number | null
+          chest_cm: number | null
+          client_id: string
+          coach_id: string
+          created_at: string
+          id: string
+          measured_on: string
+          notes: string | null
+          thighs_cm: number | null
+          waist_cm: number | null
+          weight_kg: number | null
+        }
+        Insert: {
+          arms_cm?: number | null
+          body_fat_pct?: number | null
+          chest_cm?: number | null
+          client_id: string
+          coach_id: string
+          created_at?: string
+          id?: string
+          measured_on?: string
+          notes?: string | null
+          thighs_cm?: number | null
+          waist_cm?: number | null
+          weight_kg?: number | null
+        }
+        Update: {
+          arms_cm?: number | null
+          body_fat_pct?: number | null
+          chest_cm?: number | null
+          client_id?: string
+          coach_id?: string
+          created_at?: string
+          id?: string
+          measured_on?: string
+          notes?: string | null
+          thighs_cm?: number | null
+          waist_cm?: number | null
+          weight_kg?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "measurements_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          phone: string | null
+          specialty: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          specialty?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          specialty?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
+      workout_plans: {
+        Row: {
+          client_id: string | null
+          coach_id: string
+          created_at: string
+          days_per_week: number | null
+          details: Json | null
+          id: string
+          start_date: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          client_id?: string | null
+          coach_id: string
+          created_at?: string
+          days_per_week?: number | null
+          details?: Json | null
+          id?: string
+          start_date?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          client_id?: string | null
+          coach_id?: string
+          created_at?: string
+          days_per_week?: number | null
+          details?: Json | null
+          id?: string
+          start_date?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "workout_plans_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "coach" | "client"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +416,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "coach", "client"],
+    },
   },
 } as const
